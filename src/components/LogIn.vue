@@ -124,4 +124,7 @@ text-align: center;
 ::placeholder{
   text-align: center;
 }
+input {
+ text-align: center;
+        }
 </style>
