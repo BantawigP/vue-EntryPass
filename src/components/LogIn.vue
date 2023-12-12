@@ -1,6 +1,23 @@
 <script setup>
 import InputText from 'primevue/inputtext';
 import Button from 'primevue/button';
+import { RouterLink } from 'vue-router';
+
+
+const validate = () => {
+            const username = document.getElementById('user').value;
+            const password = document.getElementById('pass').value;
+
+            if (username === 'admin' && password === 'password') {
+                alert('Login successful!');
+                window.open('/admin','_self');
+            }
+            else if(username === 'cashier' && password === 'password'){
+              window.open('/cashierOffice');
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        };
 </script>
 
 <template>
@@ -12,9 +29,9 @@ import Button from 'primevue/button';
   <img src="/src/assets/myuic.png" class="myuic">
 </form>
 <form class="loginform">
-  <InputText class="user" v-model="value1" type="text" size="small" placeholder="Username"/>
-  <InputText class="pass" v-model="value2" type="text" size="small" placeholder="Password"/>
-  <router-link to="/home" class="login"><Button label="Login"/></router-link>
+  <InputText class="user" id="user" v-model="value1" type="text" size="small" placeholder="Username"/>
+  <InputText class="pass" id="pass" v-model="value2" type="text" size="small" placeholder="Password"/>
+  <Button @click="validate()">Login</Button>
    <p>
       <router-link to="/registration">Register here</router-link>
    </p>
