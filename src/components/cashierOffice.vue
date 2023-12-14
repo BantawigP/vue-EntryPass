@@ -70,13 +70,16 @@ const addCategory = () => {
 
 <template>
   <body>
-    <div class="Whitebackground">
-    <div class="Pinkbackground">
-    <div class="Graybackground">
-  <form class="logos">
-  <img src="/src/assets/uic1.png" class="uic1">
+    
+    <div class="Whitebackground"><form class="logos">
+  <img src="/src/assets/uic1.png" class="uiclogo">
   <img src="/src/assets/myuic.png" class="myuic">
 </form>
+    <div class="Graybackground"></div>
+    <div class="Pinkbackground">
+    <div class="Whitebackground1">
+
+  
   <div>
     <h1>Visitor Information</h1>
     <DataTable :value="categories" tableStyle="min-width: 50rem">
@@ -163,44 +166,65 @@ left: 0px;
 top: 0px;
 }
 .Whitebackground{
-  width: 1747px;
-  height: 887px;
+  position: relative;
+  border: 1px solid;
+  width: 1683px;
+  height: 902px;
+  top: 12%;
   padding: 2% 0 0;
   margin: auto;
+  background-color:rgba(217, 217, 217, 85%);
+}
+
+.Whitebackground1{
+  position: absolute;
+  border: 1px solid;
+  width: 1045px;
+  height: 496px;
+  right: 10%;
+  bottom: 8%;
   background-color:rgba(217, 217, 217, 50%);
 }
 .myuic{
-position: relative;
+position: absolute;
 margin: auto;
-height:85px;
-width:167px;
+width:222px;
+height:90px;
+top: 12%;
+right: 39.5%;
 display: block;
 
 }
-.uic1{
-position: relative;
+.uiclogo{
+position: absolute;
 margin:auto;
-height:125px;
-width:125px;
+width:215px;
+height:215px;
+top: -10%;
+right: 40%;
 display: block;
 padding-bottom: 8px;
 }
+
 .Pinkbackground{
-  width: 1500px;
-  height: 786px;
+  position: absolute;
+  border: 1px solid;
+  width: 1319px;
+  height: 641px;
+  top: 20%;
+  right: 2%;
   padding: 2% 0 0;
   margin: auto;
   background-color:rgba(234, 198, 235, 100%);
 }
 .Graybackground{
-  
+  position: absolute;
+  border-radius: 20px;
+  top: 25%;
+  left: 2%;
   width: 271px;
   height: 576px;
-  padding: 2% 0 0;
-  margin: auto;
   background-color:rgba(184, 184, 184, 100%);
 }
-ty{width: 271px;
-  
-}
+
 </style>
