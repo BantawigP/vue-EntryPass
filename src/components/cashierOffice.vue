@@ -200,7 +200,7 @@ padding-bottom: 8px;
   margin: auto;
   background-color:rgba(184, 184, 184, 100%);
 }
-ty{
+ty{width: 271px;
   
 }
 </style>
