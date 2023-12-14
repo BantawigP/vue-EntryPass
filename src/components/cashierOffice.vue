@@ -208,6 +208,13 @@ display: block;
 padding-bottom: 8px;
 }
 
+h1{
+  position: absolute;
+  right: 37.5%;
+  top: 1%;
+  font-family: arial;
+}
+
 .Pinkbackground{
   position: absolute;
   border: 1px solid;
