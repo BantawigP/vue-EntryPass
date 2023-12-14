@@ -2,7 +2,21 @@
 import InputText from 'primevue/inputtext';
 import Button from 'primevue/button';
 
+const showConfirmation= () => {
+            const firstName = document.getElementById('user').value;
+            const lastName = document.getElementById('pass').value;
+            const Purpose = document.getElementById('user').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
 
+            if (username === 'admin' && password === 'password') {
+                alert('Login successful!');
+                window.open('/admin','_self');
+            }
+           else {
+                alert('Invalid username or password. Please try again.');
+            }
+        };
 </script>
 
 <template>
@@ -10,16 +24,16 @@ import Button from 'primevue/button';
   <div>
    
     <p>First Name:</p>
-    <InputText v-model="value1" type="text" size="small" placeholder="Firstname" />
+    <InputText v-model="value1" id="fname" type="text" size="small" placeholder="Firstname" />
     <p>Last Name:</p>
-    <InputText v-model="value1" type="text" size="small" placeholder="Lastname" />
+    <InputText v-model="value1" id="lname" type="text" size="small" placeholder="Lastname" />
     <p>Purpose of Visit:</p>
-    <InputText v-model="value1" type="text" size="small" placeholder="Purpose" />
+    <InputText v-model="value1" id="purpose" type="text" size="small" placeholder="Purpose" />
     <p>Date:</p>
-    <InputText v-model="value1" type="text" size="small" placeholder="mm/yy/dd" />
+    <InputText v-model="value1" id="date" type="text" size="small" placeholder="mm/yy/dd" />
     <p>Time:</p>
-    <InputText v-model="value1" type="text" size="small" placeholder="12:00" />
-    <Button label="Submit" />
+    <InputText v-model="value1" id="time" type="text" size="small" placeholder="12:00" />
+    <Button @click="showConfirmation()">Confirm</Button>
   
 
     
