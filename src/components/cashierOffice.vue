@@ -77,11 +77,13 @@ const addCategory = () => {
 </form>
     <div class="Graybackground"></div>
     <div class="Pinkbackground">
+      <h1>Visitor Information</h1>
     <div class="Whitebackground1">
 
   
   <div>
-    <h1>Visitor Information</h1>
+    
+    
     <DataTable :value="categories" tableStyle="min-width: 50rem">
       <Column field="id" header="ID"></Column>
       <Column field="name" header="Name"></Column>
