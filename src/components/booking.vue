@@ -3,19 +3,19 @@ import InputText from 'primevue/inputtext';
 import Button from 'primevue/button';
 
 const showConfirmation= () => {
-            const firstName = document.getElementById('user').value;
-            const lastName = document.getElementById('pass').value;
-            const Purpose = document.getElementById('user').value;
-            const date = document.getElementById('date').value;
-            const time = document.getElementById('time').value;
-
-            if (username === 'admin' && password === 'password') {
-                alert('Login successful!');
-                window.open('/admin','_self');
-            }
-           else {
-                alert('Invalid username or password. Please try again.');
-            }
+            var fname= document.getElementById('fname').value;
+            var lname=document.getElementById('lname').value;
+            var purpose=document.getElementById('purpose').value;
+            var date=document.getElementById('date').value;
+            var time=document.getElementById('time').value;
+           
+             alert('Firstname: '+fname +'\n'+
+             'Lastname: '+lname+'\n' + 
+             'Purpose: '+purpose+'\n'+
+             'Date: '+date+'\n'+
+             'Time: ' +time);
+         
+          
         };
 </script>
 
@@ -35,10 +35,9 @@ const showConfirmation= () => {
     <InputText v-model="value1" id="time" type="text" size="small" placeholder="12:00" />
     <Button @click="showConfirmation()">Confirm</Button>
   
-
-    
-  </div>
-</body>
+</div>
+  </body>
+  
 </template>
 
 <style scoped>
@@ -50,4 +49,5 @@ height: 1080px;
 left: 0px;
 top: 0px;
 }
+
 </style>
