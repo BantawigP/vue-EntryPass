@@ -75,7 +75,12 @@ const addCategory = () => {
   <img src="/src/assets/uic1.png" class="uiclogo">
   <img src="/src/assets/myuic.png" class="myuic">
 </form>
+    
     <div class="Graybackground"></div>
+    <div class="Curvebox"></div>
+    <div class="Curvebox1"></div>
+    <div class="Curvebox2"></div>
+    <div class="Curvebox3"></div>
     <div class="Pinkbackground">
       <h1>Visitor Information</h1>
     <div class="Whitebackground1">
@@ -192,7 +197,7 @@ position: absolute;
 margin: auto;
 width:222px;
 height:90px;
-top: 12%;
+top: 9.5%;
 right: 39.5%;
 display: block;
 
@@ -202,7 +207,7 @@ position: absolute;
 margin:auto;
 width:215px;
 height:215px;
-top: -10%;
+top: -12.5%;
 right: 40%;
 display: block;
 padding-bottom: 8px;
@@ -236,4 +241,43 @@ h1{
   background-color:rgba(184, 184, 184, 100%);
 }
 
+.Curvebox{
+  position: absolute;
+  border-radius: 15px;
+  width: 210px;
+  height: 43px;
+  top: 28%;
+  left: 3.8%;
+  background-color:rgba(255, 255, 255, 100%);
+}
+
+.Curvebox1{
+  position: absolute;
+  border-radius: 15px;
+  width: 234px;
+  height: 51px;
+  top: 35%;
+  left: 3%;
+  background-color:rgba(238, 139, 204, 100%);
+}
+
+.Curvebox2{
+  position: absolute;
+  border-radius: 15px;
+  width: 210px;
+  height: 43px;
+  top: 43%;
+  left: 3.8%;
+  background-color:rgba(255, 255, 255, 100%);
+}
+
+.Curvebox3{
+  position: absolute;
+  border-radius: 15px;
+  width: 210px;
+  height: 43px;
+  top: 50%;
+  left: 3.8%;
+  background-color:rgba(255, 255, 255, 100%);
+}
 </style>
