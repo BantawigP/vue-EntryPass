@@ -43,9 +43,9 @@ const items = [
           to: "/cashierOffice",
         },
         {
-          label: "Popup",
+          label: "Confirmation",
           icon: "pi pi-fw pi-user",
-          to: "/Popup",
+          to: "/confirmation",
         },
         
       ];
