@@ -26,7 +26,7 @@ const categories = ref([
 <template>
   <body>
   <div>
-    <h1>Visitor Information</h1>
+    <h1>Visit Information</h1>
     <DataTable :value="categories" tableStyle="min-width: 50rem">
       <Column field="id" header="ID"></Column>
       <Column field="date" header="Date"></Column>
