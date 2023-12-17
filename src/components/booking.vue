@@ -54,9 +54,6 @@ const confirm= () => {
   </div>
 </div>
 </div>
-=======
-    <Button @click="confirm()">Confirm</Button>
-  
 </div>
 
   </body>
