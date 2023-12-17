@@ -164,7 +164,15 @@ const addCategory = () => {
 </template>
 
 <style scoped>
-body {
+/* mulish-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Mulish';
+  font-style: normal;
+  font-weight: 400;
+  src: url('...\src\assets\mulish-v13-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+ body {
 background-image: url('/src/assets/bg.png');
 position: relative;
 width: 1920px;
@@ -172,6 +180,8 @@ height: 1080px;
 left: 0px;
 top: 0px;
 }
+ 
+
 .Whitebackground{
   position: relative;
   border: 1px solid;
@@ -217,7 +227,7 @@ h1{
   position: absolute;
   right: 37.5%;
   top: 1%;
-  font-family: arial;
+  font-family: 'Mulish';
 }
 
 .Pinkbackground{
