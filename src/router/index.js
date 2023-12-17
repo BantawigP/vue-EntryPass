@@ -8,6 +8,7 @@ import home from "../components/home.vue";
 import viewapps from "../components/viewapps.vue";
 import cashierOffice from "../components/cashierOffice.vue";
 import registration from "../components/registration.vue";
+import Popup from "../components/Popup.vue";
 
 const routes = [
 {      path: "/",
@@ -52,9 +53,13 @@ const routes = [
       {
         path: "/cashierOffice",
         name: "Cashier Office",
-        component:cashierOffice,
+        component: cashierOffice,
       },
-   
+      {
+      path: "/Popup",
+      name: "Popup",
+      component: Popup,
+    },
   ];
 
   const router = createRouter({

@@ -1,5 +1,5 @@
 <script setup>
-import LogIn from './components/LogIn.vue'
+
 
 const items = [
         {
@@ -42,7 +42,11 @@ const items = [
           icon: "pi pi-fw pi-user",
           to: "/cashierOffice",
         },
-        
+        {
+          label: "Popup",
+          icon: "pi pi-fw pi-user",
+          to: "/Popup",
+        },
         
       ];
 </script>

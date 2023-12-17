@@ -1,20 +1,38 @@
+<script setup>
+var urlParams = new URLSearchParams(window.location.search);
+
+var fname = urlParams.get('fname');
+var lname = urlParams.get('lname');
+var purpose = urlParams.get('purpose');
+var date = urlParams.get('date');
+var time = urlParams.get('time');
+
+var newParagraph = document.createElement('p');
+newParagraph.innerText = 'First Name: ' + fname + ', Last Name: ' + lname + ', Purpose: ' + purpose + ', Date: ' + date + ', Time: ' + time;
+
+document.body.appendChild(newParagraph);
+</script>
 <template>
-    <v-dialog max-width="600px">
-      <v-btn flat slot="activator" class="success">Add New Project</v-btn>
-      <v-card>
-        <v-card-title>
-          <h2>Add a New Project</h2>
-        </v-card-title>
-      </v-card>
-    </v-dialog>
-  </template>
+  <body>
+<h1>Are you sure?</h1>
+</body>
+</template>
   
-  <script>
-  export default {
-    data() {
-      return {
-  
-      }
-    }
-  }
-  </script>
+
+<style scoped>
+body {
+background-image: url('/src/assets/bg.png');
+position: relative;
+width: 1920px;
+height: 1080px;
+left: 0px;
+top: 0px;
+}
+p{
+  font-size: small;
+  font-family: 'mulish';
+  color: black;
+  position: relative;
+
+}
+</style>
