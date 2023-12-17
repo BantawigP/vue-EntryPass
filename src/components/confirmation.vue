@@ -4,11 +4,13 @@
 
 <template> 
 <body> 
+  <div class="whitebackground">
   <div class="confirmation"> 
     <h1>ARE YOU SURE THAT THIS IS YOUR FINAL BOOK REQUEST?</h1> 
     <router-link to="/booking">Register here</router-link> 
-    <router-link to="/registration">Register here</router-link>
+    <router-link to="">Register here</router-link>
     </div> 
+  </div>
     </body> 
     
 </template> 
