@@ -77,13 +77,24 @@ const addCategory = () => {
 </form>
     
     <div class="Graybackground"></div>
-    <div class="Curvebox"></div>
-    <div class="Curvebox1"></div>
-    <div class="Curvebox2"></div>
-    <div class="Curvebox3"></div>
+    
+    <div class="Curvebox">
+      <h2 class="Admin">Admin</h2>
+    </div>
+    <div class="Curvebox1">
+      <h2 class="OIC">Office in Charge</h2>
+    </div>
+    <div class="Curvebox2">
+      <h2 class="Guard">Guard</h2>
+    </div>
+    <div class="Curvebox3">
+      <h2 class="Booking">Booking</h2>
+    </div>
     <div class="Pinkbackground">
       <h1>Visitor Information</h1>
+      
     <div class="Whitebackground1">
+      
 
   
   <div>
@@ -133,22 +144,22 @@ const addCategory = () => {
 
     <!-- Add Category Form -->
     <div>
-      <h2>Add Visitor</h2>
+      <h2 class="Addvisitor">Add Visitor</h2>
       <form @submit.prevent="addCategory">
         <div>
-          <label for="newName">Name:</label>
+          <label class="Name" for="newName">Name:</label>
           <InputText id="newName" v-model="newCategory.name" />
         </div>
         <div>
-          <label for="newDate">Date:</label>
+          <label class="Date" for="newDate">Date:</label>
           <InputText id="newDate" v-model="newCategory.date" />
         </div> 
         <div>
-          <label for="newTime">Time:</label>
+          <label class="Time" for="newTime">Time:</label>
           <InputText id="newTime" v-model="newCategory.time" />
         </div>
         <div>
-          <label for="newOffice">Office:</label>
+          <label class="Office" for="newOffice">Office:</label>
           <InputText id="newOffice" v-model="newCategory.office" />
         </div> 
         <div>
@@ -213,10 +224,114 @@ display: block;
 padding-bottom: 8px;
 }
 
+.p-button-primary{
+  position: absolute;
+  right: 71%;
+  bottom: 2%;
+  font-family: arial;
+}
+
+.Addvisitor{
+  position: absolute;
+  right: 69%;
+  bottom: 40%;
+}
+
+.Name{
+  position: absolute;
+  left: 7%;
+  bottom: 37%;
+}
+
+
+#newName{
+  position: absolute;
+  border-radius: 10px;
+  width: 269px;
+  height: 35px;
+  top: 58%;
+  left: 12%;
+}
+
+.Date{
+  position: absolute;
+  left: 7%;
+  bottom: 28.5%;
+}
+
+#newDate{
+  position: absolute;
+  border-radius: 10px;
+  width: 269px;
+  height: 35px;
+  top: 66%;
+  left: 12%;
+}
+
+.Time{
+  position: absolute;
+  left: 7%;
+  bottom: 20.5%;
+}
+
+#newTime{
+  position: absolute;
+  border-radius: 10px;
+  width: 269px;
+  height: 35px;
+  top: 74%;
+  left: 12%;
+}
+
+.Office{
+  position: absolute;
+  left: 7%;
+  bottom: 12.5%;
+}
+
+#newOffice{
+  position: absolute;
+  border-radius: 10px;
+  width: 269px;
+  height: 35px;
+  top: 82.2%;
+  left: 12%;
+}
+
+
 h1{
   position: absolute;
   right: 37.5%;
   top: 1%;
+  font-family: arial;
+}
+
+.Admin{
+  position: absolute;
+  right: 32%;
+  bottom: -28%;
+  font-family: arial;
+}
+
+.OIC{
+  position: absolute;
+  width: 200px;
+  right: 4%;
+  bottom: -15%;
+  font-family: arial;
+}
+
+.Guard{
+  position: absolute;
+  right: 34%;
+  bottom: -28%;
+  font-family: arial;
+}
+
+.Booking{
+  position: absolute;
+  right: 26%;
+  bottom: -28%;
   font-family: arial;
 }
 
