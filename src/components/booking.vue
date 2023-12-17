@@ -2,19 +2,14 @@
 import InputText from 'primevue/inputtext';
 import Button from 'primevue/button';
 
-const showConfirmation= () => {
+const confirm= () => {
             var fname= document.getElementById('fname').value;
             var lname=document.getElementById('lname').value;
             var purpose=document.getElementById('purpose').value;
             var date=document.getElementById('date').value;
             var time=document.getElementById('time').value;
            
-             alert('Firstname: '+fname +'\n'+
-             'Lastname: '+lname+'\n' + 
-             'Purpose: '+purpose+'\n'+
-             'Date: '+date+'\n'+
-             'Time: ' +time);
-         
+           window.location.href = "/popup?fname=" + encodeURIComponent(fname) + "&lname=" + encodeURIComponent(lname) + "&purpose=" + encodeURIComponent(purpose)+ "&date=" + encodeURIComponent(date)+ "&time=" + encodeURIComponent(time);
           
         };
 </script>
@@ -33,9 +28,10 @@ const showConfirmation= () => {
     <InputText v-model="value1" id="date" type="text" size="small" placeholder="mm/yy/dd" />
     <p>Time:</p>
     <InputText v-model="value1" id="time" type="text" size="small" placeholder="12:00" />
-    <Button @click="showConfirmation()">Confirm</Button>
+    <Button @click="confirm()">Confirm</Button>
   
 </div>
+
   </body>
   
 </template>
