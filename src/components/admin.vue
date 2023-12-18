@@ -119,6 +119,10 @@ const addCategory = () => {
   <body>
   <!-- Account Information -->
   <div>
+    <div class="Whitebackground"><form class="logos">
+  <img src="/src/assets/uic1.png" class="uiclogo">
+  <img src="/src/assets/myuic.png" class="myuic">
+</form>
     <h1>Account Information</h1>
     <DataTable :value="account" tableStyle="min-width: 50rem">
       <Column field="id" header="ID"></Column>
@@ -171,8 +175,10 @@ const addCategory = () => {
       </form>
     </div>
   </div>
+</div>
   <!-- Visitor Information -->
   <div>
+    <div class="Vinformationbackground">
     <h1>Visitor Information</h1>
     <DataTable :value="categories" tableStyle="min-width: 50rem">
       <Column field="id" header="ID"></Column>
@@ -233,6 +239,7 @@ const addCategory = () => {
       </form>
     </div>
   </div>
+</div>
 </body>
 </template>
 
@@ -245,4 +252,51 @@ height: 1080px;
 left: 0px;
 top: 0px;
 }
+
+.Whitebackground{
+  position: absolute;
+  border: 1px solid;
+  width: 1683px;
+  height: 450px;
+  top: 8%;
+  left: 6.5%;
+  padding: 2% 0 0;
+  margin: auto;
+  background-color:rgba(217, 217, 217, 85%);
+}
+
+.myuic{
+position: absolute;
+margin: auto;
+width: 140px;
+height: 60px;
+top: 6.5%;
+right: 39.8%;
+display: block;
+
+}
+.uiclogo{
+position: absolute;
+margin:auto;
+width: 140px;
+height: 140px;
+top: -8.5%;
+right: 40%;
+display: block;
+padding-bottom: 8px;
+}
+
+.Vinformationbackground{
+  position: absolute;
+  border: 1px solid;
+  width: 1683px;
+  height: 500px;
+  top: 60%;
+  left: 6.5%;
+  padding: 2% 0 0;
+  margin: auto;
+  background-color:rgba(217, 217, 217, 85%);
+}
+
+
 </style>
