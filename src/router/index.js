@@ -8,7 +8,7 @@ import home from "../components/home.vue";
 import viewapps from "../components/viewapps.vue";
 import cashierOffice from "../components/cashierOffice.vue";
 import registration from "../components/registration.vue";
-import Popup from "../components/Popup.vue";
+import confirmation from "../components/confirmation.vue";
 
 const routes = [
 {      path: "/",
@@ -56,9 +56,9 @@ const routes = [
         component: cashierOffice,
       },
       {
-      path: "/Popup",
-      name: "Popup",
-      component: Popup,
+      path: "/confirmation",
+      name: "Confirmation",
+      component: confirmation,
     },
   ];
 
