@@ -123,7 +123,24 @@ const addCategory = () => {
   <img src="/src/assets/uic1.png" class="uiclogo">
   <img src="/src/assets/myuic.png" class="myuic">
 </form>
-    <h1>Account Information</h1>
+<div class="Graybackground">
+  <div class="Adminbox">
+      <h2 class="Admin">Admin</h2>
+    </div>
+    <div class="OICbox">
+      <h2 class="OIC">Office in Charge</h2>
+    </div>
+    <div class="Guardbox">
+      <h2 class="Guard">Guard</h2>
+    </div>
+    <div class="Bookingbox">
+      <h2 class="Booking">Booking</h2>
+    </div>
+</div>
+<div class="Pinkbackground">
+  <div class="Whitebackground1">
+  
+    <h1 class="AccountInformation">Account Information</h1>
     <DataTable :value="account" tableStyle="min-width: 50rem">
       <Column field="id" header="ID"></Column>
       <Column field="incharge" header="In-charge"></Column>
@@ -159,14 +176,14 @@ const addCategory = () => {
 
     <!-- Add Account Form -->
     <div>
-      <h2>Add Account</h2>
+      <h2 class="AddAccount">Add Account</h2>
       <form @submit.prevent="addAccount">
         <div>
-          <label for="newIncharge">In-charge:</label>
+          <label class="InCharge" for="newIncharge">In-charge:</label>
           <InputText id="newIncharge" v-model="newAccount.incharge" />
         </div>
         <div>
-          <label for="newOffice">Office:</label>
+          <label class="Office" for="newOffice">Office:</label>
           <InputText id="newOffice" v-model="newAccount.office" />
         </div>
         <div>
@@ -176,10 +193,13 @@ const addCategory = () => {
     </div>
   </div>
 </div>
+</div>
+</div>
   <!-- Visitor Information -->
   <div>
-    <div class="Vinformationbackground">
-    <h1>Visitor Information</h1>
+    <div class="VinformationPinkbackground">
+      <div class="VinformationWhitebackground">
+        <h1 class="VisitorInformation">Visitor Information</h1>
     <DataTable :value="categories" tableStyle="min-width: 50rem">
       <Column field="id" header="ID"></Column>
       <Column field="name" header="Name"></Column>
@@ -219,26 +239,27 @@ const addCategory = () => {
 
     <!-- Add Visitor Form -->
     <div>
-      <h2>Add Visitor</h2>
+      <h2 class="AddVisitor">Add Visitor</h2>
       <form @submit.prevent="addCategory">
         <div>
-          <label for="newName">Name:</label>
+          <label class="Name" for="newName">Name:</label>
           <InputText id="newName" v-model="newCategory.name" />
         </div>
         <div>
-          <label for="newDate">Date:</label>
+          <label class="Date" for="newDate">Date:</label>
           <InputText id="newDate" v-model="newCategory.date" />
         </div>
         <div>
-          <label for="newTime">Time:</label>
+          <label class="Time" for="newTime">Time:</label>
           <InputText id="newTime" v-model="newCategory.time" />
         </div>
         <div>
-          <Button label="Add" icon="pi pi-plus" class="p-button-primary" type="submit" />
+          <Button label="Add" icon="pi pi-plus" class="p-button-primary1" type="submit" />
         </div>
       </form>
     </div>
-  </div>
+</div>
+</div>
 </div>
 </body>
 </template>
@@ -258,7 +279,7 @@ overflow: auto;
   position: absolute;
   border: 1px solid;
   width: 1683px;
-  height: 450px;
+  height: 1683px;
   top: 8%;
   left: 6.5%;
   padding: 2% 0 0;
@@ -266,38 +287,252 @@ overflow: auto;
   background-color:rgba(217, 217, 217, 85%);
 }
 
-.myuic{
-position: absolute;
-margin: auto;
-width: 140px;
-height: 60px;
-top: 6.5%;
-right: 39.8%;
-display: block;
-
-}
 .uiclogo{
 position: absolute;
 margin:auto;
-width: 140px;
-height: 140px;
-top: -8.5%;
+width:215px;
+height:215px;
+top: -3%;
 right: 40%;
 display: block;
 padding-bottom: 8px;
 }
-
-.Vinformationbackground{
+.myuic{
+position: absolute;
+margin: auto;
+width:222px;
+height:90px;
+top: 9.5%;
+right: 39.5%;
+display: block;
+}
+.Graybackground{
   position: absolute;
-  border: 1px solid;
-  width: 1683px;
-  height: 500px;
-  top: 60%;
-  left: 6.5%;
-  padding: 2% 0 0;
-  margin: auto;
-  background-color:rgba(217, 217, 217, 85%);
+  border-radius: 20px;
+  top: 22%;
+  left: 2%;
+  width: 271px;
+  height: 576px;
+  background-color:rgba(184, 184, 184, 100%);
+}
+.Adminbox{
+  position: absolute;
+  border-radius: 15px;
+  width: 234px;
+  height: 51px;
+  top: 5%;
+  left: 6.7%;
+  background-color:rgba(238, 139, 204, 100%);
 }
 
+.OICbox{
+  position: absolute;
+  border-radius: 15px;
+  width: 210px;
+  height: 43px;
+  top: 15%;
+  left: 11%;
+  background-color:rgba(255, 255, 255, 100%);
+}
 
+.Guardbox{
+  position: absolute;
+  border-radius: 15px;
+  width: 210px;
+  height: 43px;
+  top: 24%;
+  left: 11%;
+  background-color:rgba(255, 255, 255, 100%);
+}
+
+.Bookingbox{
+  position: absolute;
+  border-radius: 15px;
+  width: 210px;
+  height: 43px;
+  top: 32.5%;
+  left: 11%;
+  background-color:rgba(255, 255, 255, 100%);
+}
+.Admin{
+  position: absolute;
+  right: 32%;
+  bottom: -20%;
+  font-family: arial;
+}
+
+.OIC{
+  position: absolute;
+  width: 200px;
+  right: 0%;
+  bottom: -25%;
+  font-family: arial;
+}
+
+.Guard{
+  position: absolute;
+  right: 34%;
+  bottom: -28%;
+  font-family: arial;
+}
+
+.Booking{
+  position: absolute;
+  right: 26%;
+  bottom: -28%;
+  font-family: arial;
+}
+.Pinkbackground{
+  position: absolute;
+  border: 1px solid;
+  width: 1319px;
+  height: 641px;
+  top: 20%;
+  right: 2%;
+  padding: 2% 0 0;
+  margin: auto;
+  background-color:rgba(234, 198, 235, 100%);
+}
+.Whitebackground1{
+  position: absolute;
+  border: 1px solid;
+  width: 1045px;
+  height: 496px;
+  right: 10%;
+  bottom: 8%;
+  background-color:rgba(217, 217, 217, 50%);
+}
+.AccountInformation{
+  position: absolute;
+  font-family: arial;
+  font-size: 35px;
+  left: 35%;
+  top: -18%;
+  font-family: arial;
+}
+
+.AddAccount{
+  position: relative;
+  left: 15%;
+  top: 0px;
+}
+#newIncharge{
+  position: relative;
+  border-radius: 10px;
+  width: 269px;
+  height: 35px;
+  top: -10px;
+  left: 4.5%;
+}
+#newOffice{
+  position: relative;
+  border-radius: 10px;
+  width: 269px;
+  height: 35px;
+  top: -5px;
+  left: 7%;
+}
+
+.InCharge{
+  position: relative;
+  top: -10px;
+  left: 3.5%;
+}
+
+.Office{
+  position: relative;
+  top: -5px;
+  left: 6%;
+}
+
+.p-button-primary{
+  position: relative;
+  border-radius: 10px;
+  top: 10px;
+  left: 19.5%;
+}
+
+.VinformationPinkbackground{
+  position: absolute;
+  border: 1px solid;
+  width: 1319px;
+  height: 641px;
+  top: 105%;
+  right: 5.6%;
+  padding: 2% 0 0;
+  margin: auto;
+  background-color:rgba(234, 198, 235, 100%);
+}
+.VinformationWhitebackground{
+  position: absolute;
+  border: 1px solid;
+  width: 1045px;
+  height: 496px;
+  right: 10%;
+  bottom: 8%;
+  background-color:rgba(217, 217, 217, 50%);
+}
+
+.VisitorInformation{
+  position: absolute;
+  font-family: arial;
+  font-size: 35px;
+  left: 35%;
+  top: -18%;
+  font-family: arial;
+}
+.AddVisitor{
+  position: relative;
+  left: 15%;
+  top: 0px;
+}
+#newName{
+  position: relative;
+  border-radius: 10px;
+  width: 269px;
+  height: 35px;
+  top: -10px;
+  left: 4.5%;
+}
+
+#newDate{
+  position: relative;
+  border-radius: 10px;
+  width: 269px;
+  height: 35px;
+  top: -5px;
+  left: 5.3%;
+}
+#newTime{
+  position: relative;
+  border-radius: 10px;
+  width: 269px;
+  height: 35px;
+  top: 0px;
+  left: 5.2%;
+}
+
+.Name{
+  position: relative;
+  top: -10px;
+  left: 3.5%;
+}
+
+.Date{
+  position: relative;
+  top: -5px;
+  left: 4.4%;
+}
+.Time{
+  position: relative;
+  top: -5px;
+  left: 4.4%;
+}
+
+.p-button-primary1{
+  position: relative;
+  border-radius: 10px;
+  top: 10px;
+  left: 16.5%;
+}
 </style>

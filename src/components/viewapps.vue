@@ -58,6 +58,19 @@ left: 0px;
 top: 0px;
 }
 
+
+
+.Whitebackground {
+  position: absolute;
+  border: 1px solid;
+  width: 1683px;
+  height: 902px;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  background-color: rgba(217, 217, 217, 0.85);
+  margin-bottom: 20px; 
+}
 .myuic {
     position: absolute;
     margin: center; 
@@ -74,23 +87,11 @@ top: 0px;
     margin: auto;
     width: 215px;
     height: 215px;
-    top: -1%;
+    top: -12.5%;
     right: 41%;
     display: block;
     padding-bottom: 8px;
     z-index: 1; 
-}
-
-.Whitebackground {
-  position: relative;
-  border: 1px solid;
-  width: 1683px;
-  height: 902px;
-  top: 50%;
-  left: 50%; 
-  transform: translate(-50%, -50%); 
-  background-color: rgba(217, 217, 217, 0.85);
-  margin-bottom: 20px; 
 }
 .Whitebackground1{
   position: relative;
