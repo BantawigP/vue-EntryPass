@@ -3,13 +3,8 @@ import InputText from 'primevue/inputtext';
 import Button from 'primevue/button';
 
 const confirm= () => {
-            var fname= document.getElementById('fname').value;
-            var lname=document.getElementById('lname').value;
-            var purpose=document.getElementById('purpose').value;
-            var date=document.getElementById('date').value;
-            var time=document.getElementById('time').value;
-           
-           window.location.href = "/popup?fname=" + encodeURIComponent(fname) + "&lname=" + encodeURIComponent(lname) + "&purpose=" + encodeURIComponent(purpose)+ "&date=" + encodeURIComponent(date)+ "&time=" + encodeURIComponent(time);
+
+            window.open('/confirmation','_self');
           
         };
 </script>
@@ -49,7 +44,7 @@ const confirm= () => {
     
     <InputText v-model="value1" id="time" type="text" size="small" placeholder="12:00" />
  
-    <Button class="Submit" @click="showConfirmation()">Submit</Button>
+    <Button class="Submit" @click="confirm()">Submit</Button>
 
   </div>
 </div>

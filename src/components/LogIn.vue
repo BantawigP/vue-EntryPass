@@ -14,6 +14,9 @@ const validate = () => {
             }
             else if(username === 'cashier' && password === 'password'){
               window.open('/cashierOffice');
+            }
+            else if(username === 'visitor' && password === 'password'){
+              window.open('/home');
             } else {
                 alert('Invalid username or password. Please try again.');
             }

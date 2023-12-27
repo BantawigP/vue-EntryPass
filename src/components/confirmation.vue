@@ -12,10 +12,12 @@
   <div class="whitebackground">
   <div class="confirmation"> 
     <h1 class="Text">ARE YOU SURE THAT THIS IS YOUR FINAL BOOK REQUEST?</h1> 
-    <router-link to="/booking">Regi                            wwwwwwster here</router-link> 
-    <router-link to="">Register here</router-link>
-    </div> 
-  </div>
+    
+    </div>
+   
+  </div> 
+   <router-link class="confirm" to="">Confirm</router-link>
+    <router-link class="cancel" to="/booking">Cancel</router-link>
 </div>
 </div>
     </body> 
@@ -76,6 +78,25 @@ display: block;
   padding: 2% 0 0;
   margin: auto;
   background-color:rgba(234, 198, 235, 100%);
+}
+.confirm{
+
+position: relative;
+margin:auto;
+background-color: #EE8BCC;
+border-radius: 20px;
+height: 58px;
+width: 221px;
+
+}
+.cancel{
+
+position: relative;
+margin:auto;
+background-color: #EE8BCC;
+border-radius: 20px;
+height: 58px;
+width: 221px;
 }
 
 .Text{
