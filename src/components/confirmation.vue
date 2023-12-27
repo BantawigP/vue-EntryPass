@@ -11,8 +11,8 @@
 <div class="Pinkbackground">
   <div class="whitebackground">
   <div class="confirmation"> 
-    <h1 class="Text">ARE YOU SURE THAT THIS IS YOUR FINAL BOOK REQUEST?</h1> 
-    
+    <h1 class="Text">ARE YOU SURE THAT THIS IS YOUR </h1> 
+    <h1 class="Text2">FINAL BOOK REQUEST?</h1>
     </div>
    
   </div> 
@@ -86,7 +86,9 @@ margin:auto;
 background-color: #EE8BCC;
 border-radius: 20px;
 height: 58px;
-width: 221px;
+width: 172px;
+top: 220px;
+left: 75%;
 
 }
 .cancel{
@@ -97,11 +99,19 @@ background-color: #EE8BCC;
 border-radius: 20px;
 height: 58px;
 width: 221px;
+top: 220px;
+left: 10%;
 }
 
 .Text{
-  position: absolute;
+  position: relative;
   width: 70%;
-  left: 17%;
+  left: 23%;
+}
+.Text2{
+  position: relative;
+  width: 70%;
+  top: -15px;
+  left: 31.5%;
 }
     </style>
