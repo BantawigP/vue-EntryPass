@@ -13,11 +13,12 @@ const validate = () => {
                 window.open('/admin','_self');
             }
             else if(username === 'cashier' && password === 'password'){
-              window.open('/cashierOffice');
+              window.open('/cashierOffice','_self');
             }
             else if(username === 'visitor' && password === 'password'){
-              window.open('/home');
-            } else {
+              window.open('/home','_self');
+            } 
+            else {
                 alert('Invalid username or password. Please try again.');
             }
         };
