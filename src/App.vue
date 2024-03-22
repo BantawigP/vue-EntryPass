@@ -53,7 +53,7 @@ const items = [
 
 <template>
   <div>
-  <Menubar :model="items" />
+  <!--<Menubar :model="items" />-->
   <router-view></router-view>
 </div>
 </template>
