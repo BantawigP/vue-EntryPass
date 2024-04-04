@@ -49,48 +49,49 @@ const validate = () => {
 
 <style scoped>
 .frame{
-  width: 1920px;
-  height: 1080px;
+  width: 1528px;
+  height: 755px;
   padding: 1% 0 0;
   position:relative;
   background-image: url('/src/assets/bg.png');
+  background-size:cover;
+  background-repeat: no-repeat;
 }
 .form{
-  width: 650px; 
-  height: 750px;
-  padding-top: 234px;
-  margin:0% auto;
-  background-color:rgba(217, 217, 217, 85%);
+  width: 473px;
+    height: 524px;
+    padding-top: 2px;
+    margin: 66px auto;
+    background-color: rgba(217, 217, 217, 85%);
+    border-radius: 15px;
 }
 
 .myuic{
 position: relative;
 margin: auto;
-height:80px;
-width:160px;
+height:60px;
+width:112px;
 display: block;
 
 }
 .uic1{
 position: relative;
 margin:auto;
-height:215px;
-width:215px;
+height: 150px;
+width:150px;
 display: block;
-padding-bottom: 8px;
 }
 
 .user{
   display: block;
   position: relative;
-  margin-top: auto;
   margin-right: auto;
-  margin-bottom: 51px;
+  margin-bottom: 13px;
   margin-left: auto;
   background: #FFFDFD;
 border-radius: 20px;
-height: 71px;
-width: 371px;
+height: 48px;
+width: 275px;
 }
 .pass{
   display: block;
@@ -99,23 +100,24 @@ width: 371px;
   background: #FFFDFD;
   margin-top: auto;
     margin-right: auto;
-    margin-bottom: 20px;
+    margin-bottom: 36px;
     margin-left: auto;
   border-radius: 20px;
-height: 71px;
-width: 371px;
+height: 48px;
+width: 275px;
 }
 .logos {
-  margin-bottom: 145px;
+  margin-bottom: 56px;
 }
 button{
 display: block;
 position: relative;
 margin:auto;
-background-color: #EE8BCC;
+background-color: #FA7B9F;
 border-radius: 20px;
-height: 58px;
-width: 221px;
+border-bottom: 10px;
+height: 44px;
+width: 180px;
 }
 p{
 text-align: center;
