@@ -25,6 +25,7 @@ const validate = () => {
 </script>
 
 <template>
+ 
  <body>
  <div class="frame">
  <div class="form">

@@ -1,12 +1,8 @@
 <script setup>
 import InputText from 'primevue/inputtext';
-import Button from 'primevue/button';
 
-const confirm= () => {
 
-            window.open('/confirmation','_self');
-          
-        };
+
 </script>
 
 <template>
@@ -17,34 +13,58 @@ const confirm= () => {
 </form>
 <div class="Graybackground"></div>
     
-    <div class="Curvebox">
-      <h2 class="Admin">Admin</h2>
-    </div>
-    <div class="Curvebox1">
-      <h2 class="OIC">Office in Charge</h2>
-    </div>
-    <div class="Curvebox2">
-      <h2 class="Guard">Guard</h2>
-    </div>
-    <div class="Curvebox3">
-      <h2 class="Booking">Booking</h2>
-    </div>
+
   <div>
     <div class="Pinkbackground">
       <div class="Whitebackground1">
    
+
+    <InputText v-model="value" id="fname" type="text" size="small" placeholder="Firstname" />
     
-    <InputText v-model="value1" id="fname" type="text" size="small" placeholder="Firstname" />
+    <InputText v-model="value" id="lname" type="text" size="small" placeholder="Lastname" />
     
-    <InputText v-model="value1" id="lname" type="text" size="small" placeholder="Lastname" />
+    <InputText v-model="value" id="purpose" type="text" size="small" placeholder="Purpose" />
     
-    <InputText v-model="value1" id="purpose" type="text" size="small" placeholder="Purpose" />
+    <InputText v-model="value" id="date" type="text" size="small" placeholder="mm/yy/dd" />
     
-    <InputText v-model="value1" id="date" type="text" size="small" placeholder="mm/yy/dd" />
-    
-    <InputText v-model="value1" id="time" type="text" size="small" placeholder="12:00" />
- 
-    <Button class="Submit" @click="confirm()">Submit</Button>
+    <InputText v-model="value" id="time" type="text" size="small" placeholder="12:00" />
+
+   
+      <div class="container" id="modal-submit">
+        <div class="text-center">
+        </div>
+        <div class="row align-items-end">
+          <div class="col-md-8 text-end">
+            <p> </p>
+            <button onclick="valuesTransfer" class="btn btn-primary row align-items-end" data-bs-toggle="modal"
+            data-bs-target="#reg-modal">
+          Register for test
+          </button> 
+          </div>
+        </div>
+      </div>
+
+    <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title"
+    aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-title">Are these information correct?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"
+        aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
 
   </div>
 </div>
@@ -243,5 +263,11 @@ padding-bottom: 8px;
   padding: 2% 0 0;
   margin: auto;
   background-color:rgba(234, 198, 235, 100%);
+}
+#modal-submit{
+  position: relative;
+  border-radius: 5px;
+  left: -10.7%;
+  top: 36%;
 }
 </style>

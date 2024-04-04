@@ -10,6 +10,7 @@ import cashierOffice from "../components/cashierOffice.vue";
 import registration from "../components/registration.vue";
 import confirmation from "../components/confirmation.vue";
 
+
 const routes = [
 {      path: "/",
       name: "LogIn",
