@@ -49,39 +49,33 @@ const validate = () => {
 
 <style scoped>
 .frame{
-  width: 786px;
-  height: 786px;
+  width: 1920px;
+  height: 1080px;
   padding: 1% 0 0;
-  margin: auto;
+  position:relative;
+  background-image: url('/src/assets/bg.png');
 }
 .form{
-  width: 786px;
-  height: 786px;
-  padding: 2% 0 0;
-  margin: auto;
+  width: 650px; 
+  height: 750px;
+  padding-top: 234px;
+  margin:0% auto;
   background-color:rgba(217, 217, 217, 85%);
 }
-body {
-  background-image: url('/src/assets/bg.png');
-  position: relative;
-width: 1920px;
-height: 1080px;
-left: 0px;
-top: 0px;
-}
+
 .myuic{
 position: relative;
 margin: auto;
-height:85px;
-width:167px;
+height:80px;
+width:160px;
 display: block;
 
 }
 .uic1{
 position: relative;
 margin:auto;
-height:125px;
-width:125px;
+height:215px;
+width:215px;
 display: block;
 padding-bottom: 8px;
 }
