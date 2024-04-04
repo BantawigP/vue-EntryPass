@@ -35,7 +35,7 @@ const validate = () => {
 </form>
 <form class="loginform">
   <InputText class="user" id="user" v-model="value1" type="text" size="small" placeholder="Username"/>
-  <InputText class="pass" id="pass" v-model="value2" type="text" size="small" placeholder="Password"/>
+  <InputText class="pass" id="pass" v-model="value2" type="password" size="small" placeholder="Password"/>
   <Button @click="validate()">Login</Button>
    <p>
       <router-link to="/registration">Register here</router-link>
@@ -105,7 +105,9 @@ width: 275px;
   border-radius: 20px;
 height: 48px;
 width: 275px;
+
 }
+
 .logos {
   margin-bottom: 56px;
 }
