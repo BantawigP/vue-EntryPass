@@ -1,126 +1,126 @@
 <script setup>
-import InputText from 'primevue/inputtext';
-import Button from 'primevue/button';
 
 </script>
 
 <template>
   <body>
-  <div>
-    
-    <h1>
-       Dashboard
-    </h1>
-    <form class="logos">
-    <img src="/src/assets/uic1.png" class="uic1">
-    <img src="/src/assets/myuic.png" class="myuic">
-    </form>
-
-    <div class="Rectangle"
-    style="width: 50%; height: 70%; 
-    background: linear-gradient(0deg, #EAC6EB 0%, #EAC6EB 100%), 
-    linear-gradient(0deg, rgba(244.37, 162.92, 162.92, 0.20) 0%, 
-    rgba(244.37, 162.92, 162.92, 0.20) 100%);
-     border: 1px #281313 solid; ">
-
-    <div class="REC"
-     style="width: 90%; height: 70%; 
-    mix-blend-mode: hard-light; 
-    background: rgba(217, 217, 217, 0.50); 
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
-    border: 1px #221B1B solid">
-   <p class="BookApp">
-    <router-link to="/booking"><Button label="Book Appointments" /></router-link>
-   </p>
-   <p class="ViewApp">
-    <router-link to="/viewapps"><Button label="View Appointments" /></router-link>
-  </p>
+ <div class="frame">
+  <div class="sidepanel">
+  <aside>
+    <div class="wrapper">
+    <div class="image_logo">
+          <img class="logo" src="/src/assets/logo.enp.png">
+        </div>
+     <div class="header_title">
+      <p>Automated Entry Pass</p>
+     </div>  
     </div>
-    </div>
+    <nav class="nav flex-column">
+      <p>Hi Visitors!</p>
+  <a class="nav-link-book" href="#">Book Appointment</a>
+  <a class="nav-link-view" href="#">View Appointment</a>
+  <a class="nav-link-settings" href="#">Settings</a>
+  <a class="nav-link-logout" href="#">Logout</a>
+</nav>
+  </aside>
+</div>
+ <div id="mainframe">
+    <div id="frame1">
+    <p>I am Paul
+.
+.
+.
+. 
+</p>
+</div>
 
-    
   </div>
+ </div>
+
 </body>
 </template>
 
 <style scoped>
-body {
-background-image: url('/src/assets/bg.png');
-position: relative;
-width: 1920px;
-height: 1080px;
-left: 0px;
-top: 0px;
+.frame{
+  width: 1528px;
+  height: 755px;
+  position:relative;
+  background-image: url('/src/assets/bg.png');
+  background-size:cover;
+  background-repeat: no-repeat;
 }
-
-.myuic{
-position: relative;
-margin: auto;
-height:85px;
-width:167px;
-display: block;
+p{
+  color: rgb(255, 255, 255);
 }
-
-.uic1{
-position: relative;
-margin:auto;
-height:125px;
-width:125px;
-display: block;
-padding-bottom: 8px;
+#mainframe{
+  background-color: rgba(238, 139, 204, 0.24); 
+  width: calc(100% - 288.84px); 
+  height: 100%; 
+  float: right; 
+  position: absolute; 
+  top: 0; 
+  right: 0;
+  z-index: 1; 
+  
 }
-
-.Rectangle {
-box-sizing: border-box;
-position: center;
-width: 888px;
-height: 644px;
-padding: 300px;
-margin: auto;
-background: linear-gradient(0deg, rgba(244, 163, 163, 0.2), rgba(244, 163, 163, 0.2)), #EAC6EB;
-mix-blend-mode: normal;
-border: 1px solid #281313;
-backdrop-filter: blur(2px);
-} 
-
-.REC {
-    position: absolute;
-    width: 597px;
-    height: 522px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(217, 217, 217, 0.5);
-    mix-blend-mode: hard-light;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);                           
-}
-
-.BookApp {
+#frame1{
+  background-color: rgba(238, 139, 204, 0.24); 
+  float: center;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  padding-top: 100px;
-  width: 608px; 
-  height: 123px; 
+  top: 0; 
+  right: 0;
+  z-index: 2; 
+
 }
 
-.ViewApp {
-  text-align: center;
-  padding-top: 50px;
+aside{
+float: left;
+background-color: #F27B8A;
+width: 288.84px;
+height: 755px;
 }
-
-button {
-    display: block;
-    position: relative;
-    margin: auto;
-    background-color: rgba(238, 139, 204, 100%);
-    border: 1px solid black; 
-    border-radius: 20px;
-    height: 58px;
-    width: 221px;
-    color: white; 
+.logo{
+  width: 39.79px;
+  height: 35.01px;
+  position:static;
+  border-radius: 20px;
+  margin-top: 37px;
+  margin-left: 23px;
 }
-
+.nav-link-book{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
+}
+.nav-link-view{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
+}
+.nav-link-logout{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
+}
+.nav-link-settings{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
+}
+.image_logo{
+  flex:1;
+  margin-right: 10px;
+}
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header_title{
+  flex: 2;
+  text-align: left;
+  margin-top: 55px;
+  padding-right: 45px;
+  
+}
 </style>
