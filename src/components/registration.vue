@@ -34,7 +34,7 @@ const validate = () => {
   <InputText class="pass" id="pass" v-model="value2" type="text" size="small" placeholder="Password"/>
   <Button @click="validate()">Register</Button>
    <p>
-      <router-link to="/registration">Already have an account?</router-link>
+      <router-link to="/">Already have an account?</router-link>
    </p>
   </form> 
   </div>
