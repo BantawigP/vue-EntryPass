@@ -47,11 +47,6 @@ const routes = [
         component: viewapps,
       },
       {
-        path: "/home",
-        name: "Home",
-        component:home,
-      },
-      {
         path: "/cashierOffice",
         name: "Cashier Office",
         component: cashierOffice,
