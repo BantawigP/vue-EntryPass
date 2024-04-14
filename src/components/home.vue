@@ -25,14 +25,29 @@
   </aside>
 </div>
  <div id="mainframe">
-    <div id="frame1">
-    <p>I am Paul
-.
-.
-.
-. 
-</p>
-</div>
+   <div id="frame1">
+    <div class="image-container">
+    <div>
+    <img src="/src/assets/sample.jpg" alt="Image 1">
+    </div>
+    <div>
+    <img src="/src/assets/sample.jpg" alt="Image 2">
+    </div>
+    </div>
+    <table>
+                <thead>
+                    <tr>
+                        <th>Recent Appointments</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                
+                </tbody>
+            </table>
+
+  </div>
 
   </div>
  </div>
@@ -48,6 +63,7 @@
   background-image: url('/src/assets/bg.png');
   background-size:cover;
   background-repeat: no-repeat;
+  display:flex;
 }
 p{
   color: rgb(255, 255, 255);
@@ -56,23 +72,21 @@ p{
   background-color: rgba(238, 139, 204, 0.24); 
   width: calc(100% - 288.84px); 
   height: 100%; 
-  float: right; 
-  position: absolute; 
+  float: right;  
   top: 0; 
   right: 0;
-  z-index: 1; 
-  
+  flex:1; 
 }
 #frame1{
-  background-color: rgba(238, 139, 204, 0.24); 
+ 
   float: center;
+  width: 50%;
+  padding: 20px;
   position: absolute;
-  top: 0; 
-  right: 0;
-  z-index: 2; 
-
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-
 aside{
 float: left;
 background-color: #F27B8A;
@@ -123,4 +137,23 @@ height: 755px;
   padding-right: 45px;
   
 }
+.image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+        margin-bottom: 20px;
+        margin-left: 47px;
+    }
+
+    .image-container div {
+        width: 45%; 
+        margin-bottom: 10px;
+        margin-top: 47px;
+
+    }
+
+    .image-container img {
+        max-width: 50%;
+        height: auto;
+    }
 </style>
