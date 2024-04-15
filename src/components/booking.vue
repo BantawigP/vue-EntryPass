@@ -1,273 +1,130 @@
 <script setup>
-import InputText from 'primevue/inputtext';
-
-
 
 </script>
 
 <template>
   <body>
-    <div class="Whitebackground"><form class="logos">
-  <img src="/src/assets/uic1.png" class="uiclogo">
-  <img src="/src/assets/myuic.png" class="myuic">
-</form>
-<div class="Graybackground"></div>
-    
-
-  <div>
-    <div class="Pinkbackground">
-      <div class="Whitebackground1">
-   
-
-    <InputText v-model="value" id="fname" type="text" size="small" placeholder="Firstname" />
-    
-    <InputText v-model="value" id="lname" type="text" size="small" placeholder="Lastname" />
-    
-    <InputText v-model="value" id="purpose" type="text" size="small" placeholder="Purpose" />
-    
-    <InputText v-model="value" id="date" type="text" size="small" placeholder="mm/yy/dd" />
-    
-    <InputText v-model="value" id="time" type="text" size="small" placeholder="12:00" />
-
-   
-      <div class="container" id="modal-submit">
-        <div class="text-center">
+ <div class="frame">
+  <div class="sidepanel">
+  <aside>
+    <div class="wrapper">
+    <div class="image_logo">
+          <img class="logo" src="/src/assets/logo.enp.png">
         </div>
-        <div class="row align-items-end">
-          <div class="col-md-8 text-end">
-            <p> </p>
-            <button onclick="valuesTransfer" class="btn btn-primary row align-items-end" data-bs-toggle="modal"
-            data-bs-target="#reg-modal">
-          Register for test
-          </button> 
-          </div>
-        </div>
-      </div>
-
-    <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title"
-    aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modal-title">Are these information correct?</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"
-        aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        
-
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-primary">Submit</button>
-      </div>
+     <div class="header_title">
+      <p>Automated Entry Pass</p>
+     </div>  
     </div>
-  </div>
-  </div>
-
-
-
-  </div>
+    <nav class="nav flex-column">
+      <p class="welcomMess">Hi Visitors!</p>
+  <a class="nav-link-book" href="#">Book Appointment</a>
+  <a class="nav-link-view" href="/viewapps">View Appointment</a>
+  <a class="nav-link-settings" href="#">Settings</a>
+  <a class="nav-link-logout" href="/">Logout</a>
+</nav>
+  </aside>
 </div>
-</div>
-</div>
+ <div id="mainframe">
+   <div id="frame1">
+    
 
-  </body>
-  
+  </div>
+
+  </div>
+ </div>
+
+</body>
 </template>
 
 <style scoped>
-body {
-background-image: url('/src/assets/bg.png');
-position: relative;
-width: 1920px;
-height: 1080px;
-left: 0px;
-top: 0px;
+.frame{
+  width: 1528px;
+  height: 755px;
+  position:relative;
+  background-image: url('/src/assets/bg.png');
+  background-size:cover;
+  background-repeat: no-repeat;
+  display:flex;
 }
-
-.Whitebackground{
-  position: relative;
-  border: 1px solid;
-  width: 1683px;
-  height: 902px;
-  top: 12%;
-  padding: 2% 0 0;
-  margin: auto;
-  background-color:rgba(217, 217, 217, 85%);
+p{
+  color: rgb(255, 255, 255);
 }
-
-.myuic{
-position: absolute;
-margin: auto;
-width:222px;
-height:90px;
-top: 11%;
-right: 42.5%;
-display: block;
-
+#mainframe{
+  background-color: rgba(238, 139, 204, 0.24); 
+  width: calc(100% - 288.84px); 
+  height: 100%; 
+  float: right;  
+  top: 0; 
+  right: 0;
+  flex:1; 
 }
-.uiclogo{
-position: absolute;
-margin:auto;
-width:215px;
-height:215px;
-top: -12.5%;
-right: 43%;
-display: block;
-padding-bottom: 8px;
-}
-.Whitebackground1{
+#frame1{
+ 
+  float: center;
+  width: 50%;
+  padding: 20px;
   position: absolute;
-  border: 1px solid;
-  width: 1045px;
-  height: 496px;
-  right: 10%;
-  bottom: 8%;
-  background-color:rgba(217, 217, 217, 50%);
-}
-
-#fname{
-  position: relative;
-  border-radius: 5px;
-  width: 423px;
-  height: 52px;
-  left: 30%;
-  top: 10%;
-}
-
-#lname{
-  position: relative;
-  border-radius: 5px;
-  width: 423px;
-  height: 52px;
-  left: -10.6%;
-  top: 22%;
-}
-
-#purpose{
-  position: relative;
-  border-radius: 5px;
-  width: 423px;
-  height: 52px;
-  left: 30%;
-  top: 23.5%;
-}
-
-#date{
-  position: relative;
-  border-radius: 5px;
-  width: 423px;
-  height: 52px;
-  left: -10.7%;
-  top: 36%;
-}
-
-#time{
-  position: relative;
-  border-radius: 5px;
-  width: 423px;
-  height: 52px;
-  left: 30%;
-  top: 38%;
-}
-
-.Submit{
-  position: relative;
-  border-radius: 46px;
   top: 50%;
-  left: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.Graybackground{
-  position: absolute;
+aside{
+float: left;
+background-color: #F27B8A;
+width: 288.84px;
+height: 755px;
+}
+.logo{
+  width: 39.79px;
+  height: 35.01px;
+  position:static;
   border-radius: 20px;
-  top: 25%;
-  left: 2%;
-  width: 271px;
-  height: 576px;
-  background-color:rgba(184, 184, 184, 100%);
+  margin-top: 37px;
+  margin-left: 23px;
 }
-.Curvebox{
-  position: absolute;
-  border-radius: 15px;
-  width: 210px;
-  height: 43px;
-  top: 28%;
-  left: 3.8%;
-  background-color:rgba(255, 255, 255, 100%);
+.nav-link-book{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
+  margin-bottom:24px;
+  margin-top: 70px;
 }
-
-.Curvebox1{
-  position: absolute;
-  border-radius: 15px;
-  width: 210px;
-  height: 43px;
-  top: 35%;
-  left: 3.8%;
-  background-color:rgba(255, 255, 255, 100%);
+.nav-link-view{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
+  margin-bottom: 319px;
 }
-
-.Curvebox2{
-  position: absolute;
-  border-radius: 15px;
-  width: 210px;
-  height: 43px;
-  top: 43%;
-  left: 3.8%;
-  background-color:rgba(255, 255, 255, 100%);
+.nav-link-settings{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
+  margin-bottom: 18px;
 }
-
-.Curvebox3{
-  position: absolute;
-  border-radius: 15px;
-  width: 234px;
-  height: 51px;
-  top: 50%;
-  left: 3%;
-  background-color:rgba(238, 139, 204, 100%);
+.nav-link-logout{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
 }
-.Admin{
-  position: absolute;
-  right: 32%;
-  bottom: -28%;
-  font-family: arial;
+.image_logo{
+  flex:1;
+  margin-right: 10px;
+}
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header_title{
+  flex: 2;
+  text-align: left;
+  margin-top: 55px;
+  padding-right: 45px;
+  
+}
+.welcomMess{
+    margin-left: 23px;
+    margin-top: 44px;
 }
 
-.OIC{
-  position: absolute;
-  width: 190px;
-  right: 4%;
-  bottom: -20%;
-  font-family: arial;
-}
-
-.Guard{
-  position: absolute;
-  right: 34%;
-  bottom: -28%;
-  font-family: arial;
-}
-
-.Booking{
-  position: absolute;
-  right: 28%;
-  bottom: -15%;
-  font-family: arial;
-}
-.Pinkbackground{
-  position: absolute;
-  border: 1px solid;
-  width: 1319px;
-  height: 641px;
-  top: 20%;
-  right: 2%;
-  padding: 2% 0 0;
-  margin: auto;
-  background-color:rgba(234, 198, 235, 100%);
-}
-#modal-submit{
-  position: relative;
-  border-radius: 5px;
-  left: -10.7%;
-  top: 36%;
-}
 </style>

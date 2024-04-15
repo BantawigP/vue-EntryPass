@@ -17,10 +17,10 @@
     </div>
     <nav class="nav flex-column">
       <p class="welcomMess">Hi Visitors!</p>
-  <a class="nav-link-book" href="#">Book Appointment</a>
-  <a class="nav-link-view" href="#">View Appointment</a>
+  <a class="nav-link-book" href="/booking">Book Appointment</a>
+  <a class="nav-link-view" href="/viewapps">View Appointment</a>
   <a class="nav-link-settings" href="#">Settings</a>
-  <a class="nav-link-logout" href="#">Logout</a>
+  <a class="nav-link-logout" href="/">Logout</a>
 </nav>
   </aside>
 </div>
