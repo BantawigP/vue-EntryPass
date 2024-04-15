@@ -26,7 +26,13 @@
 </div>
  <div id="mainframe">
    <div id="frame1">
-    
+    <div id="content" style="z-index: 1;">
+      <InputText class="user" id="fname" v-model="value1" type="text" size="small" placeholder="First Name"/>
+      <InputText class="user" id="lname" v-model="value2" type="text" size="small" placeholder="Last Name"/>
+      <InputText class="user" id="date" v-model="value3" type="text" size="small" placeholder="<MM/DD/YYYY"/>
+      <InputText class="user" id="time" v-model="value4" type="text" size="small" placeholder="12:00"/>
+      <InputText class="user" id="pov" v-model="value5" type="text" size="small" placeholder="Purpose of Visit"/>
+    </div>
 
   </div>
 
@@ -46,6 +52,13 @@
   background-repeat: no-repeat;
   display:flex;
 }
+#content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; 
+  }
 p{
   color: rgb(255, 255, 255);
 }
@@ -57,6 +70,7 @@ p{
   top: 0; 
   right: 0;
   flex:1; 
+  position: relative;
 }
 #frame1{
  
@@ -67,6 +81,8 @@ p{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 1);
+  z-index: 0;
 }
 aside{
 float: left;
