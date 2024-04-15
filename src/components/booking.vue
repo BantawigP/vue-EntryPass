@@ -83,7 +83,7 @@ height: 755px;
   margin-left: 23px;
 }
 .nav-link-book{
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   text-decoration: none;
   margin-left: 23px;
   margin-bottom:24px;
