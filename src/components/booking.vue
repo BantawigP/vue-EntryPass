@@ -72,14 +72,21 @@ const validate = () => {
 
 <style scoped>
   .frame{
-    width: 1528px;
-    height: 755px;
-    display: flex;
-    background-image: url('/src/assets/bg.png');
+  position:relative;
+  width: 1528px;
+  height: 755px;
+  display: flex;
+  background-image: url('/src/assets/bg.png');
   background-size:cover;
   background-repeat: no-repeat;
 
   }
+  aside{
+float: left;
+background-color: #F27B8A;
+width: 288.84px;
+height: 755px;
+}
 
   .sidepanel{
     width: 288.84px;
@@ -95,46 +102,38 @@ const validate = () => {
   }
 
   .header_title{
-    text-align: left;
-    margin-left: 20px;
-    margin-top: 10px;
-    color: #ffffff;
-  }
+
+  flex: 2;
+  text-align: left;
+  margin-top: 55px;
+  padding-right: 45px;
+
+}
 
   .logo{
     width: 40px;
     height: 35px;
     border-radius: 20px;
   }
-
-  .nav {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-  }
-  
   .nav-link-book{
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   margin-left: 23px;
   margin-bottom:24px;
   margin-top: 70px;
 }
-
 .nav-link-view{
   color: rgb(255, 255, 255);
   text-decoration: none;
   margin-left: 23px;
   margin-bottom: 319px;
 }
-
 .nav-link-settings{
   color: rgb(255, 255, 255);
   text-decoration: none;
   margin-left: 23px;
   margin-bottom: 18px;
 }
-
 .nav-link-logout{
   color: rgb(255, 255, 255);
   text-decoration: none;
@@ -188,6 +187,10 @@ width: 135.29px;
     text-align: center;
     
   }
+  .image_logo{
+  flex:1;
+  margin-right: 10px;
+}
   .fname{
     margin-top: 131px;
   }
