@@ -30,8 +30,8 @@ const validate = () => {
 </form>
 <form class="loginform">
   <InputText class="fname" id="fname" v-model="value1" type="text" size="small" placeholder="First Name"/>
-  <InputText class="lname" id="lname" v-model="value1" type="text" size="small" placeholder="Last Name"/>
-  <InputText class="pass" id="pass" v-model="value2" type="text" size="small" placeholder="Password"/>
+  <InputText class="lname" id="lname" v-model="value2" type="text" size="small" placeholder="Last Name"/>
+  <InputText class="pass" id="pass" v-model="value3" type="text" size="small" placeholder="Password"/>
   <Button @click="validate()">Register</Button>
    <p>
       <router-link to="/">Already have an account?</router-link>
