@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router';
-
+import Button from 'primevue/button';
 
 const validate = () => {
             const Fname = document.getElementById('fname').value;
@@ -14,14 +14,17 @@ const validate = () => {
                 alert('Please fill up the form to proceed');
                 
             }
-            else if(username === 'cashier' && password === 'password'){
-              window.open('/cashierOffice','_self');
+            else if (Fname === '' || Lname === '' || date ==='' || time ==='' || pov ==='') {
+                alert('Please complete the form to proceed');
+                
             }
-            else if(username === 'visitor' && password === 'password'){
-              window.open('/home','_self');
-            } 
+            else if (Fname === '' && Lname === '' && date ==='' && time ==='' && pov ==='') {
+                alert('Please fill up the form to proceed');
+                
+            }
             else {
-                alert('Invalid username or password. Please try again.');
+                alert('Are you sure about the details below?');
+                window.open('/home','_self');
             }
         };
 </script>
@@ -152,7 +155,8 @@ const validate = () => {
   }
 
   #frame1{
-    width: 50%;
+    width: 1054.81px;
+    height: 639px;
     background-color: #f2f2f2;
     padding: 20px;
     border-radius: 5px;
@@ -171,11 +175,16 @@ width: 180px;
 }
 
   input[type="text"] {
-    width: calc(100% - 12px);
+    width: 329.48px;
+    display: block;
+    margin-left: 363px;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    margin-bottom: 20px;
+    text-align: center;
+    
   }
 
 
