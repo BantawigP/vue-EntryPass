@@ -98,6 +98,7 @@ const validate = () => {
     text-align: left;
     margin-left: 20px;
     margin-top: 10px;
+    color: #ffffff;
   }
 
   .logo{
@@ -113,7 +114,7 @@ const validate = () => {
   }
   
   .nav-link-book{
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   text-decoration: none;
   margin-left: 23px;
   margin-bottom:24px;
@@ -143,6 +144,7 @@ const validate = () => {
   .welcomMess{
     margin-left: 20px;
     margin-top: 20px;
+    color: #ffffff;
   }
 
   #mainframe{
@@ -157,7 +159,7 @@ const validate = () => {
   #frame1{
     width: 1054.81px;
     height: 639px;
-    background-color: #f2f2f2;
+    background-color: rgb(217, 217, 217,0.38);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -165,13 +167,13 @@ const validate = () => {
 
   button{
 display: block;
-position: relative;
-margin:auto;
+margin-left: 459px;
+margin-top: 36px;
 background-color: #FA7B9F;
 border-radius: 20px;
-border-bottom: 10px;
-height: 44px;
-width: 180px;
+border: 1px solid #FA7B9F;
+height: 40.55px;
+width: 135.29px;
 }
 
   input[type="text"] {
@@ -180,10 +182,18 @@ width: 180px;
     margin-left: 363px;
     padding: 8px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 25px;
     box-sizing: border-box;
     margin-bottom: 20px;
     text-align: center;
+    
+  }
+  .fname{
+    margin-top: 131px;
+  }
+  .pov{
+    height: 100.31px;
+    width: 329.48px;
     
   }
 
