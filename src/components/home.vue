@@ -16,7 +16,7 @@
      </div>  
     </div>
     <nav class="nav flex-column">
-      <p>Hi Visitors!</p>
+      <p class="welcomMess">Hi Visitors!</p>
   <a class="nav-link-book" href="#">Book Appointment</a>
   <a class="nav-link-view" href="#">View Appointment</a>
   <a class="nav-link-settings" href="#">Settings</a>
@@ -37,7 +37,7 @@
     <table>
                 <thead>
                     <tr>
-                        <th>Recent Appointments</th>
+                        <th class="header_table"><p id="title_header">Recent Appointments</p></th>
                         
                     </tr>
                 </thead>
@@ -105,18 +105,22 @@ height: 755px;
   color: rgb(255, 255, 255);
   text-decoration: none;
   margin-left: 23px;
+  margin-bottom:24px;
+  margin-top: 70px;
 }
 .nav-link-view{
   color: rgb(255, 255, 255);
   text-decoration: none;
   margin-left: 23px;
+  margin-bottom: 319px;
 }
-.nav-link-logout{
+.nav-link-settings{
   color: rgb(255, 255, 255);
   text-decoration: none;
   margin-left: 23px;
+  margin-bottom: 18px;
 }
-.nav-link-settings{
+.nav-link-logout{
   color: rgb(255, 255, 255);
   text-decoration: none;
   margin-left: 23px;
@@ -145,15 +149,34 @@ height: 755px;
         margin-left: 47px;
     }
 
-    .image-container div {
+.image-container div {
         width: 45%; 
         margin-bottom: 10px;
         margin-top: 47px;
 
     }
-
     .image-container img {
         max-width: 50%;
         height: auto;
+    }
+    table{
+      background-color: rgb(217, 217, 2217, 38%);
+      width:1054.81px ;
+      height: 279.67px;
+    }
+    #title_header{
+    color: rgb(255, 255, 255);
+    margin-top: 21px;
+    margin-left: 27px;
+    margin-bottom: 21px;
+    font-size:15px;
+    }
+    .header_table{
+    background-color: rgb(215, 122, 135);
+    height:60.07px ;
+    }
+    .welcomMess{
+      margin-left: 23px;
+      margin-top: 44px;
     }
 </style>
