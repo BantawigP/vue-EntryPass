@@ -1,117 +1,172 @@
 <script setup>
-import DataTable from 'primevue/datatable';
-import Column from 'primevue/column';
-import { ref } from 'vue';
-
-const categories = ref([
-  {
-    id: 1,
-    name: "Alice",
-    date: "12/13/23",
-    time:"12:13PM",
-    office:"Cashier",
-
-  },
-  {
-    id: 2,
-    name: "Paul",
-    date: "12/13/23",
-    time:"12:13PM",
-    office:"Cashier",
-  }
-]);
 
 </script>
 
 <template>
   <body>
-  
-<div>
-  <div class="Whitebackground"><form class="logos">
-  <img src="/src/assets/uic1.png" class="uiclogo">
-  <img src="/src/assets/myuic.png" class="myuic">
-  </form>
-  </div>
-  <div class="Pinkbackground">
-    
-    <div class="Whitebackground1">
-    <h1>Visit Information</h1>
-    <DataTable :value="categories" tableStyle="min-width: 50rem">
-      <Column field="id" header="ID"></Column>
-      <Column field="date" header="Date"></Column>
-      <Column field="time" header="Time"></Column>
-      <Column field="office" header="Office"></Column>
-    </DataTable>
-  </div>
+ <div class="frame">
+  <div class="sidepanel">
+  <aside>
+    <div class="wrapper">
+    <div class="image_logo">
+          <img class="logo" src="/src/assets/logo.enp.png">
+        </div>
+     <div class="header_title">
+      <p>Automated Entry Pass</p>
+     </div>  
+    </div>
+    <nav class="nav flex-column">
+      <p class="welcomMess">Hi Visitors!</p>
+  <a class="nav-link-book" href="/booking">Book Appointment</a>
+  <a class="nav-link-view" href="/viewapps">View Appointment</a>
+  <a class="nav-link-settings" href="#">Settings</a>
+  <a class="nav-link-logout" href="/">Logout</a>
+</nav>
+  </aside>
 </div>
+ <div id="mainframe">
+    <table>
+                <thead>
+                    <tr>
+                        <th class="header_table"><p id="title_header">Recent Appointments</p></th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                
+                </tbody>
+            </table>
+
+
   </div>
+ </div>
+
 </body>
 </template>
 
 <style scoped>
-body {
-background-image: url('/src/assets/bg.png');
-position: relative;
-width: 1920px;
-height: 1080px;
-left: 0px;
-top: 0px;
+.frame{
+  width: 1528px;
+  height: 755px;
+  position:relative;
+  background-image: url('/src/assets/bg.png');
+  background-size:cover;
+  background-repeat: no-repeat;
+  display:flex;
 }
-
-
-
-.Whitebackground {
+p{
+  color: rgb(255, 255, 255);
+}
+#mainframe{
+  background-color: rgba(238, 139, 204, 0.24); 
+  width: calc(100% - 288.84px); 
+  height: 100%; 
+  float: right;  
+  top: 0; 
+  right: 0;
+  flex:1; 
+}
+#frame1{
+ 
+  float: center;
+  width: 50%;
+  padding: 20px;
   position: absolute;
-  border: 1px solid;
-  width: 1683px;
-  height: 902px;
   top: 50%;
-  left: 50%; 
-  transform: translate(-50%, -50%); 
-  background-color: rgba(217, 217, 217, 0.85);
-  margin-bottom: 20px; 
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.myuic {
-    position: absolute;
-    margin: center; 
-    width: 222px;
-    height: 90px;
-    top: 22%;
-    right: 41%;
-    display: block;
-    z-index: 2; 
+aside{
+float: left;
+background-color: #F27B8A;
+width: 288.84px;
+height: 755px;
 }
+.logo{
+  width: 39.79px;
+  height: 35.01px;
+  position:static;
+  border-radius: 20px;
+  margin-top: 37px;
+  margin-left: 23px;
+}
+.nav-link-book{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
+  margin-bottom:24px;
+  margin-top: 70px;
+}
+.nav-link-view{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
+  margin-bottom: 319px;
+}
+.nav-link-settings{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
+  margin-bottom: 18px;
+}
+.nav-link-logout{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
+}
+.image_logo{
+  flex:1;
+  margin-right: 10px;
+}
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header_title{
+  flex: 2;
+  text-align: left;
+  margin-top: 55px;
+  padding-right: 45px;
+  
+}
+.image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+        margin-bottom: 20px;
+        margin-left: 47px;
+    }
 
-.uiclogo {
-    position: absolute;
-    margin: auto;
-    width: 215px;
-    height: 215px;
-    top: -12.5%;
-    right: 41%;
-    display: block;
-    padding-bottom: 8px;
-    z-index: 1; 
-}
-.Whitebackground1{
-  position: relative;
-  border: 1px solid;
-  width: 1045px;
-  height: 496px;
-  right: -10%;
-  bottom: -10%;
-  background-color:rgba(217, 217, 217, 50%);
-}
+.image-container div {
+        width: 45%; 
+        margin-bottom: 10px;
+        margin-top: 47px;
 
-.Pinkbackground{
-  position: absolute;
-  border: 1px solid;
-  width: 1319px;
-  height: 641px;
-  top: 18%;
-  right: 15%;
-  padding: 2% 0 0;
-  margin: auto;
-  background-color:rgba(234, 198, 235, 100%);
-}
+    }
+    .image-container img {
+        max-width: 50%;
+        height: auto;
+    }
+    table{
+      background-color: rgb(217, 217, 2217, 38%);
+      width:1054.81px ;
+      height: 279.67px;
+    }
+    #title_header{
+    color: rgb(255, 255, 255);
+    margin-top: 21px;
+    margin-left: 27px;
+    margin-bottom: 21px;
+    font-size:15px;
+    }
+    .header_table{
+    background-color: rgb(215, 122, 135);
+    height:60.07px ;
+    }
+    .welcomMess{
+      margin-left: 23px;
+      margin-top: 44px;
+    }
 </style>
