@@ -101,7 +101,7 @@ height: 755px;
   margin-top: 70px;
 }
 .nav-link-view{
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   text-decoration: none;
   margin-left: 23px;
   margin-bottom: 319px;
