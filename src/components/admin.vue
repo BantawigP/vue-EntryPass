@@ -117,26 +117,30 @@ const addCategory = () => {
 
 <template>
   <body>
-  <!-- Account Information -->
-  <div>
-    <div class="Whitebackground"><form class="logos">
-  <img src="/src/assets/uic1.png" class="uiclogo">
-  <img src="/src/assets/myuic.png" class="myuic">
-</form>
-<div class="Graybackground">
-  <div class="Adminbox">
-      <h2 class="Admin">Admin</h2>
-    </div>
-    <div class="OICbox">
-      <h2 class="OIC">Office in Charge</h2>
-    </div>
-    <div class="Guardbox">
-      <h2 class="Guard">Guard</h2>
-    </div>
-    <div class="Bookingbox">
-      <h2 class="Booking">Booking</h2>
-    </div>
-</div>
+  
+    <!-- Account Information -->
+
+    <div class="frame">
+      <div class="sidepanel">
+        <aside>
+          <div class="wrapper">
+            <div class="image_logo">
+              <img class="logo" src="/src/assets/logo.enp.png">
+            </div>
+            <div class="header_title">
+              <p>Automated Entry Pass</p>
+            </div>  
+          </div>
+          <nav class="nav flex-column">
+            <p class="welcomMess">Hi Visitors!</p>
+            <a class="nav-link-book" href="#">Book Appointment</a>
+            <a class="nav-link-view" href="/viewapps">View Appointment</a>
+            <a class="nav-link-settings" href="#">Settings</a>
+            <a class="nav-link-logout" href="/">Logout</a>
+          </nav>
+        </aside>
+      </div>
+
 <div class="Pinkbackground">
   <div class="Whitebackground1">
   
@@ -194,7 +198,7 @@ const addCategory = () => {
   </div>
 </div>
 </div>
-</div>
+
   <!-- Visitor Information -->
   <div>
     <div class="VinformationPinkbackground">
@@ -265,6 +269,75 @@ const addCategory = () => {
 </template>
 
 <style scoped>
+ .frame{
+  width: 1528px;
+  height: 755px;
+  position:relative;
+  background-image: url('/src/assets/bg.png');
+  background-size:cover;
+  background-repeat: no-repeat;
+  display:flex;
+}
+p{
+  color: rgb(255, 255, 255);
+}
+.header_title{
+  flex: 2;
+  text-align: left;
+  margin-top: 55px;
+  padding-right: 45px; 
+}
+.welcomMess{
+      margin-left: 23px;
+      margin-top: 44px;
+    }
+aside{
+float: left;
+background-color: #F27B8A;
+width: 288.84px;
+height: 755px;
+}
+.logo{
+  width: 39.79px;
+  height: 35.01px;
+  position:static;
+  border-radius: 20px;
+  margin-top: 37px;
+  margin-left: 23px;
+}
+.nav-link-book{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
+  margin-bottom:24px;
+  margin-top: 70px;
+}
+.nav-link-view{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
+  margin-bottom: 319px;
+}
+.nav-link-settings{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
+  margin-bottom: 18px;
+}
+.nav-link-logout{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
+}
+.image_logo{
+  flex:1;
+  margin-right: 10px;
+}
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 body {
 background-image: url('/src/assets/bg.png');
 position: relative;
@@ -285,26 +358,6 @@ overflow: auto;
   padding: 2% 0 0;
   margin: auto;
   background-color:rgba(217, 217, 217, 85%);
-}
-
-.uiclogo{
-position: absolute;
-margin:auto;
-width:215px;
-height:215px;
-top: -3%;
-right: 40%;
-display: block;
-padding-bottom: 8px;
-}
-.myuic{
-position: absolute;
-margin: auto;
-width:222px;
-height:90px;
-top: 9.5%;
-right: 39.5%;
-display: block;
 }
 .Graybackground{
   position: absolute;
