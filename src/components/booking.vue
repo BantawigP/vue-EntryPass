@@ -51,6 +51,7 @@ const validate = () => {
           </nav>
         </aside>
       </div>
+
       <div id="mainframe">
         <div id="frame1">
           <form>
@@ -72,50 +73,42 @@ const validate = () => {
 
 <style scoped>
   .frame{
-  position:relative;
   width: 1528px;
   height: 755px;
-  display: flex;
+  position:relative;
   background-image: url('/src/assets/bg.png');
   background-size:cover;
   background-repeat: no-repeat;
-
-  }
-  aside{
+  display:flex;
+}
+p{
+  color: rgb(255, 255, 255);
+}
+.header_title{
+  flex: 2;
+  text-align: left;
+  margin-top: 55px;
+  padding-right: 45px; 
+}
+.welcomMess{
+      margin-left: 23px;
+      margin-top: 44px;
+    }
+aside{
 float: left;
 background-color: #F27B8A;
 width: 288.84px;
 height: 755px;
 }
-
-  .sidepanel{
-    width: 288.84px;
-    height: 755px;
-    background-color: #F27B8A;
-  }
-
-  .wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-
-  .header_title{
-
-  flex: 2;
-  text-align: left;
-  margin-top: 55px;
-  padding-right: 45px;
-
+.logo{
+  width: 39.79px;
+  height: 35.01px;
+  position:static;
+  border-radius: 20px;
+  margin-top: 37px;
+  margin-left: 23px;
 }
-
-  .logo{
-    width: 40px;
-    height: 35px;
-    border-radius: 20px;
-  }
-  .nav-link-book{
+.nav-link-book{
   color: rgb(255, 255, 255);
   text-decoration: none;
   margin-left: 23px;
@@ -139,12 +132,15 @@ height: 755px;
   text-decoration: none;
   margin-left: 23px;
 }
-
-  .welcomMess{
-    margin-left: 20px;
-    margin-top: 20px;
-    color: #ffffff;
-  }
+.image_logo{
+  flex:1;
+  margin-right: 10px;
+}
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
   #mainframe{
     flex: 1;

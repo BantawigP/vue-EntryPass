@@ -24,6 +24,7 @@
 </nav>
   </aside>
 </div>
+
  <div id="mainframe">
    <div id="frame1">
     <div class="image-container">
@@ -68,25 +69,16 @@
 p{
   color: rgb(255, 255, 255);
 }
-#mainframe{
-  background-color: rgba(238, 139, 204, 0.24); 
-  width: calc(100% - 288.84px); 
-  height: 100%; 
-  float: right;  
-  top: 0; 
-  right: 0;
-  flex:1; 
+.header_title{
+  flex: 2;
+  text-align: left;
+  margin-top: 55px;
+  padding-right: 45px; 
 }
-#frame1{
- 
-  float: center;
-  width: 50%;
-  padding: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+.welcomMess{
+      margin-left: 23px;
+      margin-top: 44px;
+    }
 aside{
 float: left;
 background-color: #F27B8A;
@@ -134,13 +126,26 @@ height: 755px;
   align-items: center;
   justify-content: center;
 }
-.header_title{
-  flex: 2;
-  text-align: left;
-  margin-top: 55px;
-  padding-right: 45px;
-  
+#mainframe{
+  background-color: rgba(238, 139, 204, 0.24); 
+  width: calc(100% - 288.84px); 
+  height: 100%; 
+  float: right;  
+  top: 0; 
+  right: 0;
+  flex:1; 
 }
+#frame1{
+ 
+  float: center;
+  width: 50%;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .image-container {
         display: flex;
         flex-wrap: wrap;
@@ -175,8 +180,5 @@ height: 755px;
     background-color: rgb(215, 122, 135);
     height:60.07px ;
     }
-    .welcomMess{
-      margin-left: 23px;
-      margin-top: 44px;
-    }
+    
 </style>
