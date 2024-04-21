@@ -41,6 +41,7 @@
                         <th class="header_table"><p id="title_header">Recent Appointments</p></th>
                         
                     </tr>
+                    
                 </thead>
                 <tbody>
                    

@@ -25,18 +25,22 @@
   </aside>
 </div>
  <div id="mainframe">
-    <table>
-                <thead>
-                    <tr>
-                        <th class="header_table"><p id="title_header">Recent Appointments</p></th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                   
-                
-                </tbody>
-            </table>
+   
+      <table>
+    <thead>
+        <tr>
+            <th colspan="3" id="title_header">Recent Appointments</th>
+        </tr>
+        <tr id="tlabels">
+            <th>Date</th>
+            <th>Time</th>
+            <th>Purpose of Visit</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+    </tbody>
+</table>
 
 
   </div>
@@ -59,24 +63,22 @@ p{
   color: rgb(255, 255, 255);
 }
 #mainframe{
-  background-color: rgba(238, 139, 204, 0.24); 
-  width: calc(100% - 288.84px); 
-  height: 100%; 
-  float: right;  
-  top: 0; 
-  right: 0;
-  flex:1; 
-}
-#frame1{
- 
-  float: center;
-  width: 50%;
-  padding: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(238, 139, 204, 0.24); 
+  }
+
+  #frame1{
+    width: 1054.81px;
+    height: 639px;
+    background-color: rgb(217, 217, 217,0.38);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
 aside{
 float: left;
 background-color: #F27B8A;
@@ -160,11 +162,21 @@ height: 755px;
     margin-left: 27px;
     margin-bottom: 21px;
     font-size:15px;
+    background-color: #F27B8A;
+    height: 49.86px;
     }
     .header_table{
     background-color: rgb(215, 122, 135);
     height:60.07px ;
+    width:1054.81px ;
     }
+    #tlabels{
+      color: #F27B8A;
+      background-color: #D9D9D9;
+      text-align: center;
+    }
+  
+
     .welcomMess{
       margin-left: 23px;
       margin-top: 44px;
