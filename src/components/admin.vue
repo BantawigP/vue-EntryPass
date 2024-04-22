@@ -277,6 +277,7 @@ const addCategory = () => {
   background-size:cover;
   background-repeat: no-repeat;
   display:flex;
+  overflow: auto;
 }
 p{
   color: rgb(255, 255, 255);
@@ -338,15 +339,9 @@ height: 755px;
   align-items: center;
   justify-content: center;
 }
-body {
-background-image: url('/src/assets/bg.png');
-position: relative;
-width: 1920px;
-height: 1080px;
-left: 0px;
-top: 0px;
-overflow: auto;
-}
+
+
+
 
 .Whitebackground{
   position: absolute;
@@ -368,73 +363,7 @@ overflow: auto;
   height: 576px;
   background-color:rgba(184, 184, 184, 100%);
 }
-.Adminbox{
-  position: absolute;
-  border-radius: 15px;
-  width: 234px;
-  height: 51px;
-  top: 5%;
-  left: 6.7%;
-  background-color:rgba(238, 139, 204, 100%);
-}
 
-.OICbox{
-  position: absolute;
-  border-radius: 15px;
-  width: 210px;
-  height: 43px;
-  top: 15%;
-  left: 11%;
-  background-color:rgba(255, 255, 255, 100%);
-}
-
-.Guardbox{
-  position: absolute;
-  border-radius: 15px;
-  width: 210px;
-  height: 43px;
-  top: 24%;
-  left: 11%;
-  background-color:rgba(255, 255, 255, 100%);
-}
-
-.Bookingbox{
-  position: absolute;
-  border-radius: 15px;
-  width: 210px;
-  height: 43px;
-  top: 32.5%;
-  left: 11%;
-  background-color:rgba(255, 255, 255, 100%);
-}
-.Admin{
-  position: absolute;
-  right: 32%;
-  bottom: -20%;
-  font-family: arial;
-}
-
-.OIC{
-  position: absolute;
-  width: 200px;
-  right: 0%;
-  bottom: -25%;
-  font-family: arial;
-}
-
-.Guard{
-  position: absolute;
-  right: 34%;
-  bottom: -28%;
-  font-family: arial;
-}
-
-.Booking{
-  position: absolute;
-  right: 26%;
-  bottom: -28%;
-  font-family: arial;
-}
 .Pinkbackground{
   position: absolute;
   border: 1px solid;
@@ -486,17 +415,6 @@ overflow: auto;
   left: 7%;
 }
 
-.InCharge{
-  position: relative;
-  top: -10px;
-  left: 3.5%;
-}
-
-.Office{
-  position: relative;
-  top: -5px;
-  left: 6%;
-}
 
 .p-button-primary{
   position: relative;

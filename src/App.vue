@@ -1,54 +1,25 @@
 <script setup>
+import { onBeforeMount } from 'vue';
+import { useRouter } from 'vue-router';
+import axios from 'axios'
+const router = useRouter();
 
+onBeforeMount(() =>
+{router.push('/')}
+);
+const fetch =async () =>{
+  try{
+    const response = await axios.get('');
+    console.log(response.data)
+  }
+  catch (error){
+    console.error('Error Message:', error);
+  }
+  finally{
 
-const items = [
-        {
-          label: "Login",
-          icon: "pi pi-fw pi-home",
-          to: "/",
-        },
-        {
-          label: "registration",
-          icon: "pi pi-fw pi-home",
-          to: "/registration",
-        },
-        {
-          label: "Guard",
-          icon: "pi pi-fw pi-list",
-          to: "/guard",
-        },
-        {
-          label: "Admin",
-          icon: "pi pi-fw pi-user",
-          to: "/admin",
-        },
-        {
-          label: "Booking",
-          icon: "pi pi-fw pi-user",
-          to: "/booking",
-        },
-        {
-          label: "View Appointment",
-          icon: "pi pi-fw pi-user",
-          to: "/viewapps",
-        },
-        {
-          label: "Home",
-          icon: "pi pi-fw pi-user",
-          to: "/home",
-        },
-        {
-          label: "Cashier Office",
-          icon: "pi pi-fw pi-user",
-          to: "/cashierOffice",
-        },
-        {
-          label: "Confirmation",
-          icon: "pi pi-fw pi-user",
-          to: "/confirmation",
-        },
-        
-      ];
+  }
+};
+fetch()
 </script>
 
 
