@@ -197,7 +197,7 @@ const addCategory = () => {
     </div>
   </div>
 </div>
-</div>
+
 
   <!-- Visitor Information -->
   <div>
@@ -262,6 +262,7 @@ const addCategory = () => {
         </div>
       </form>
     </div>
+</div>
 </div>
 </div>
 </div>

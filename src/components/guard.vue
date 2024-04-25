@@ -1,398 +1,182 @@
 <script setup>
-import DataTable from 'primevue/datatable';
-import Column from 'primevue/column';
-import Button from 'primevue/button';
-import InputText from 'primevue/inputtext';
-import { ref } from 'vue';
 
-const categories = ref([
-  {
-    id: 1,
-    name: "Alice",
-    date: "12/13/23",
-    time:"12:13PM",
-    office:"Cashier",
-
-  },
-  {
-    id: 2,
-    name: "Paul",
-    date: "12/13/23",
-    time:"12:13PM",
-    office:"Cashier",
-  }
-]);
-
-const editingCategory = ref(null);
-const newCategory = ref({ name: '', date: '', time: '', office: ''}); // New category object
-
-const editCategory = (category) => {
-  editingCategory.value = { ...category.data }; // Set editingCategory to the selected category's data
-};
-
-const saveEditedCategory = () => {
-  if (editingCategory.value) {
-    // Update the category data with the edited values
-    const index = categories.value.findIndex((c) => c.id === editingCategory.value.id);
-    categories.value[index].name = editingCategory.value.name;
-    categories.value[index].date = editingCategory.value.date;
-    categories.value[index].time = editingCategory.value.time;
-    categories.value[index].office = editingCategory.value.office;
-    editingCategory.value = null;
-  }
-};
-
-const cancelEdit = () => {
-  editingCategory.value = null;
-};
-
-const deleteCategory = (category) => {
-  // Find the index of the category
-  const index = categories.value.findIndex((c) => c.id === category.id);
-  // Remove the category from the categories array
-  categories.value.splice(index, 1);
-};
-
-const addCategory = () => {
-  if (newCategory.value.name && newCategory.value.description) {
-    // Generate a new unique ID (replace with your actual ID generation logic)
-    const newId = Math.max(...categories.value.map((c) => c.id)) + 1;
-    newCategory.value.id = newId;
-    categories.value.push({ ...newCategory.value });
-    // Clear the form for the next addition
-    newCategory.value.name = '';
-    newCategory.value.date = '';
-    newCategory.value.time = '';
-    newCategory.value.office = '';
-  }
-};
 </script>
 
 <template>
   <body>
-    
-    <div class="Whitebackground"><form class="logos">
-  <img src="/src/assets/uic1.png" class="uiclogo">
-  <img src="/src/assets/myuic.png" class="myuic">
-</form>
-    
-    <div class="Graybackground"></div>
-    
-    <div class="Curvebox">
-      <h2 class="Admin">Admin</h2>
+ <div class="frame">
+  <div class="sidepanel">
+  <aside>
+    <div class="wrapper">
+    <div class="image_logo">
+          <img class="logo" src="/src/assets/logo.enp.png">
+        </div>
+     <div class="header_title">
+      <p>Automated Entry Pass</p>
+     </div>  
     </div>
-    <div class="Curvebox1">
-      <h2 class="OIC">Office in Charge</h2>
-    </div>
-    <div class="Curvebox2">
-      <h2 class="Guard">Guard</h2>
-    </div>
-    <div class="Curvebox3">
-      <h2 class="Booking">Booking</h2>
-    </div>
-    <div class="Pinkbackground">
-      <h1>Visitor Information</h1>
-      
-    <div class="Whitebackground1">
-      
+    <nav class="nav flex-column">
+      <p class="welcomMess">Hi Guard!</p>
+  <a class="nav-link-view" href="/viewapps">View Appointment</a>
+  <a class="nav-link-logout" href="/">Logout</a>
+</nav>
+  </aside>
+</div>
+ <div id="mainframe">
+   
+      <table>
+    <thead>
+        <tr>
+            <th colspan="3" id="title_header">Recent Appointments</th>
+        </tr>
+        <tr id="tlabels">
+            <th>Date</th>
+            <th>Time</th>
+            <th>Purpose of Visit</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+    </tbody>
+</table>
 
-  
-  <div>
-    
-    
-    <DataTable :value="categories" tableStyle="min-width: 50rem">
-      <Column field="id" header="ID"></Column>
-      <Column field="name" header="Name"></Column>
-      <Column field="date" header="Date"></Column>
-      <Column field="time" header="Time"></Column>
-      <Column field="office" header="Office"></Column>
-      <Column header="Actions">
-        <template #body="rowData">
-          <Button label="Edit" icon="pi pi-pencil" class="p-button-info" @click="editCategory(rowData)" />
-          <Button label="Delete" icon="pi pi-trash" class="p-button-danger" @click="deleteCategory(rowData)" />
-          <Button label="Confirm" icon="pi pi-pencil" class="p-button-info" @click="editCategory(rowData)" />
-          <Button label="Decline" icon="pi pi-pencil" class="p-button-info" @click="editCategory(rowData)" />
-        </template>
-      </Column>
-    </DataTable>
 
-    <div v-if="editingCategory">
-      <h2>Edit Category</h2>
-      <form @submit="saveEditedCategory">
-        <div>
-          <label for="editedName">Name:</label>
-          <InputText id="editedName" v-model="editingCategory.name" />
-        </div>
-        <div>
-          <label for="editedDate">Date:</label>
-          <InputText id="editedDate" v-model="editingCategory.date" />
-        </div>
-        <div>
-          <label for="editedTime">Time:</label>
-          <InputText id="editedTime" v-model="editingCategory.time" />
-        </div>
-        <div>
-          <label for="editedOffice">Office:</label>
-          <InputText id="editedOffice" v-model="editingCategory.office" />
-        </div>
-        <div>
-          <Button label="Save" icon="pi pi-check" class="p-button-success" type="submit" />
-          <Button label="Cancel" icon="pi pi-times" class="p-button-secondary" @click="cancelEdit" />
-        </div>
-      </form>
-    </div>
-
-    <!-- Add Category Form -->
-    <div>
-      <h2 class="Addvisitor">Add Visitor</h2>
-      <form @submit.prevent="addCategory">
-        <div>
-          <label class="Name" for="newName">Name:</label>
-          <InputText id="newName" v-model="newCategory.name" />
-        </div>
-        <div>
-          <label class="Date" for="newDate">Date:</label>
-          <InputText id="newDate" v-model="newCategory.date" />
-        </div> 
-        <div>
-          <label class="Time" for="newTime">Time:</label>
-          <InputText id="newTime" v-model="newCategory.time" />
-        </div>
-        <div>
-          <label class="Office" for="newOffice">Office:</label>
-          <InputText id="newOffice" v-model="newCategory.office" />
-        </div> 
-        <div>
-          <Button label="Add" icon="pi pi-plus" class="p-button-primary" type="submit" />
-        </div>
-      </form>
-    </div>
   </div>
-</div>
-</div>
-</div>
+ </div>
+
 </body>
 </template>
 
 <style scoped>
-body {
-background-image: url('/src/assets/bg.png');
-position: relative;
-width: 1920px;
-height: 1080px;
-left: 0px;
-top: 0px;
+.frame{
+  width: 1528px;
+  height: 755px;
+  position:relative;
+  background-image: url('/src/assets/bg.png');
+  background-size:cover;
+  background-repeat: no-repeat;
+  display:flex;
 }
-.Whitebackground{
-  position: relative;
-  border: 1px solid;
-  width: 1683px;
-  height: 902px;
-  top: 12%;
-  padding: 2% 0 0;
-  margin: auto;
-  background-color:rgba(217, 217, 217, 85%);
+p{
+  color: rgb(255, 255, 255);
 }
+#mainframe{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(238, 139, 204, 0.24); 
+  }
 
-.Whitebackground1{
-  position: absolute;
-  border: 1px solid;
-  width: 1045px;
-  height: 496px;
-  right: 10%;
-  bottom: 8%;
-  background-color:rgba(217, 217, 217, 50%);
+  #frame1{
+    width: 1054.81px;
+    height: 639px;
+    background-color: rgb(217, 217, 217,0.38);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+aside{
+float: left;
+background-color: #F27B8A;
+width: 288.84px;
+height: 755px;
 }
-.myuic{
-position: absolute;
-margin: auto;
-width:222px;
-height:90px;
-top: 9.5%;
-right: 39.5%;
-display: block;
-
-}
-.uiclogo{
-position: absolute;
-margin:auto;
-width:215px;
-height:215px;
-top: -12.5%;
-right: 40%;
-display: block;
-padding-bottom: 8px;
-}
-
-.p-button-primary{
-  position: absolute;
-  right: 71%;
-  bottom: 2%;
-  font-family: arial;
-}
-
-.Addvisitor{
-  position: absolute;
-  right: 69%;
-  bottom: 40%;
-}
-
-.Name{
-  position: absolute;
-  left: 7%;
-  bottom: 37%;
-}
-
-
-#newName{
-  position: absolute;
-  border-radius: 10px;
-  width: 269px;
-  height: 35px;
-  top: 58%;
-  left: 12%;
-}
-
-.Date{
-  position: absolute;
-  left: 7%;
-  bottom: 28.5%;
-}
-
-#newDate{
-  position: absolute;
-  border-radius: 10px;
-  width: 269px;
-  height: 35px;
-  top: 66%;
-  left: 12%;
-}
-
-.Time{
-  position: absolute;
-  left: 7%;
-  bottom: 20.5%;
-}
-
-#newTime{
-  position: absolute;
-  border-radius: 10px;
-  width: 269px;
-  height: 35px;
-  top: 74%;
-  left: 12%;
-}
-
-.Office{
-  position: absolute;
-  left: 7%;
-  bottom: 12.5%;
-}
-
-#newOffice{
-  position: absolute;
-  border-radius: 10px;
-  width: 269px;
-  height: 35px;
-  top: 82.2%;
-  left: 12%;
-}
-
-
-h1{
-  position: absolute;
-  right: 37.5%;
-  top: 1%;
-  font-family: arial;
-}
-
-.Admin{
-  position: absolute;
-  right: 32%;
-  bottom: -28%;
-  font-family: arial;
-}
-
-.OIC{
-  position: absolute;
-  width: 190px;
-  right: 4%;
-  bottom: -30%;
-  font-family: arial;
-}
-
-.Guard{
-  position: absolute;
-  right: 34%;
-  bottom: -20%;
-  font-family: arial;
-}
-
-.Booking{
-  position: absolute;
-  right: 26%;
-  bottom: -28%;
-  font-family: arial;
-}
-
-.Pinkbackground{
-  position: absolute;
-  border: 1px solid;
-  width: 1319px;
-  height: 641px;
-  top: 20%;
-  right: 2%;
-  padding: 2% 0 0;
-  margin: auto;
-  background-color:rgba(234, 198, 235, 100%);
-}
-.Graybackground{
-  position: absolute;
+.logo{
+  width: 39.79px;
+  height: 35.01px;
+  position:static;
   border-radius: 20px;
-  top: 25%;
-  left: 2%;
-  width: 271px;
-  height: 576px;
-  background-color:rgba(184, 184, 184, 100%);
+  margin-top: 37px;
+  margin-left: 23px;
 }
+.nav-link-book{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
+  margin-bottom:24px;
+  margin-top: 70px;
+}
+.nav-link-view{
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  margin-left: 23px;
+  margin-bottom: 319px;
+}
+.nav-link-settings{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
+  margin-bottom: 18px;
+}
+.nav-link-logout{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
+}
+.image_logo{
+  flex:1;
+  margin-right: 10px;
+}
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header_title{
+  flex: 2;
+  text-align: left;
+  margin-top: 55px;
+  padding-right: 45px;
+  
+}
+.image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+        margin-bottom: 20px;
+        margin-left: 47px;
+    }
 
-.Curvebox{
-  position: absolute;
-  border-radius: 15px;
-  width: 210px;
-  height: 43px;
-  top: 28%;
-  left: 3.8%;
-  background-color:rgba(255, 255, 255, 100%);
-}
+.image-container div {
+        width: 45%; 
+        margin-bottom: 10px;
+        margin-top: 47px;
 
-.Curvebox1{
-  position: absolute;
-  border-radius: 15px;
-  width: 210px;
-  height: 43px;
-  top: 35%;
-  left: 3.8%;
-  background-color:rgba(255, 255, 255, 100%);
-}
+    }
+    .image-container img {
+        max-width: 50%;
+        height: auto;
+    }
+    table{
+      background-color: rgb(217, 217, 2217, 38%);
+      width:1054.81px ;
+      height: 279.67px;
+    }
+    #title_header{
+    color: rgb(255, 255, 255);
+    margin-top: 21px;
+    margin-left: 27px;
+    margin-bottom: 21px;
+    font-size:15px;
+    background-color: #F27B8A;
+    height: 49.86px;
+    }
+    .header_table{
+    background-color: rgb(215, 122, 135);
+    height:60.07px ;
+    width:1054.81px ;
+    }
+    #tlabels{
+      color: #F27B8A;
+      background-color: #D9D9D9;
+      text-align: center;
+    }
+  
 
-.Curvebox2{
-  position: absolute;
-  border-radius: 15px;
-  width: 234px;
-  height: 51px;
-  top: 42%;
-  left: 3%;
-  background-color:rgba(238, 139, 204, 100%);
-}
-
-.Curvebox3{
-  position: absolute;
-  border-radius: 15px;
-  width: 210px;
-  height: 43px;
-  top: 50%;
-  left: 3.8%;
-  background-color:rgba(255, 255, 255, 100%);
-}
+    .welcomMess{
+      margin-left: 23px;
+      margin-top: 44px;
+    }
 </style>

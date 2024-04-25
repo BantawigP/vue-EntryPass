@@ -1,5 +1,5 @@
 <script setup>
-import { onBeforeMount } from 'vue';
+/*import { onBeforeMount } from 'vue';
 import { useRouter } from 'vue-router';
 import axios from 'axios'
 const router = useRouter();
@@ -19,7 +19,7 @@ const fetch =async () =>{
 
   }
 };
-fetch()
+fetch()*/
 </script>
 
 
