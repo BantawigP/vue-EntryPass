@@ -5,60 +5,7 @@ import Button from 'primevue/button';
 import InputText from 'primevue/inputtext';
 import { ref } from 'vue';
 
-const account = ref([
-  {
-    id: 1,
-    incharge: "Alice",
-    office: "Cashier",
-  },
-  
-  {
-    id: 2,
-    incharge: "Paul",
-    office: "Registrar", 
-  }
-]);
 
-const editingAccount = ref(null);
-const newAccount = ref({ incharge: '', office: '' }); // New category object for incharge and offfice
-
-const editAccount = (accounts) => {
-  editingAccount.value = { ...accounts.data }; // Set editingAccounts to the selected account's data
-};
-
-const saveEditedAccount = () => {
-  if (editingAccount.value) {
-    // Update the account data with the edited values
-    const index = account.value.findIndex((c) => c.id === editingAccount.value.id);
-    account.value[index].incharge = editingAccount.value.incharge;
-    account.value[index].office = editingAccount.value.office;
-    editingAccount.value = null;
-  }
-};
-
-const cancelEdit = () => {
-  editingAccount.value = null;
-  editingCategory.value = null;
-};
-
-const deleteAccount = (accounts) => {
-  // Find the index of the category
-  const index = account.value.findIndex((c) => c.id === accounts.id);
-  // Remove the category from the categories array
-  account.value.splice(index, 1);
-};
-
-const addAccount = () => {
-  if (newAccount.value.incharge && newAccount.value.office) {
-    // Generate a new unique ID (replace with your actual ID generation logic)
-    const newId = Math.max(...account.value.map((c) => c.id)) + 1;
-    newAccount.value.id = newId;
-    account.value.push({ ...newAccount.value });
-    // Clear the form for the next addition
-    newAccount.value.incharge = '';
-    newAccount.value.office = '';
-  }
-};
 
 const categories = ref([
   {
@@ -140,63 +87,6 @@ const addCategory = () => {
           </nav>
         </aside>
       </div>
-
-<div class="Pinkbackground">
-  <div class="Whitebackground1">
-  
-    <h1 class="AccountInformation">Account Information</h1>
-    <DataTable :value="account" tableStyle="min-width: 50rem">
-      <Column field="id" header="ID"></Column>
-      <Column field="incharge" header="In-charge"></Column>
-      <Column field="office" header="Office"></Column>
-      
-      <Column header="Actions">
-        <template #body="rowData">
-          <Button label="Edit" icon="pi pi-pencil" class="p-button-info" @click="editAccount(rowData)" />
-          <Button label="Delete" icon="pi pi-trash" class="p-button-danger" @click="deleteAccount(rowData)" />
-         
-        </template>
-      </Column>
-    </DataTable>
-
-    <!-- Editing Account -->
-    <div v-if="editingAccount">
-      <h2>Edit Account</h2>
-      <form @submit="saveEditedAccount">
-        <div>
-          <label for="editedIncharge">In-charge:</label>
-          <InputText id="editedIncharge" v-model="editingAccount.incharge" />
-        </div>
-        <div>
-          <label for="editedOffice">Office:</label>
-          <InputText id="editedOffice" v-model="editingAccount.office" />
-        </div>
-        <div>
-          <Button label="Save" icon="pi pi-check" class="p-button-success" type="submit" />
-          <Button label="Cancel" icon="pi pi-times" class="p-button-secondary" @click="cancelEdit" />
-        </div>
-      </form>
-    </div>
-
-    <!-- Add Account Form -->
-    <div>
-      <h2 class="AddAccount">Add Account</h2>
-      <form @submit.prevent="addAccount">
-        <div>
-          <label class="InCharge" for="newIncharge">In-charge:</label>
-          <InputText id="newIncharge" v-model="newAccount.incharge" />
-        </div>
-        <div>
-          <label class="Office" for="newOffice">Office:</label>
-          <InputText id="newOffice" v-model="newAccount.office" />
-        </div>
-        <div>
-          <Button label="Add" icon="pi pi-plus" class="p-button-primary" type="submit" />
-        </div>
-      </form>
-    </div>
-  </div>
-</div>
 
 
   <!-- Visitor Information -->
@@ -339,59 +229,6 @@ height: 755px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-
-
-.Pinkbackground{
-  position: absolute;
-  border: 1px solid;
-  width: 1319px;
-  height: 641px;
-  top: 20%;
-  right: 2%;
-  padding: 2% 0 0;
-  margin: auto;
-  background-color:rgba(234, 198, 235, 100%);
-}
-.Whitebackground1{
-  position: absolute;
-  border: 1px solid;
-  width: 1045px;
-  height: 496px;
-  right: 10%;
-  bottom: 8%;
-  background-color:rgba(217, 217, 217, 50%);
-}
-.AccountInformation{
-  position: absolute;
-  font-family: arial;
-  font-size: 35px;
-  left: 35%;
-  top: -18%;
-  font-family: arial;
-}
-
-.AddAccount{
-  position: relative;
-  left: 15%;
-  top: 0px;
-}
-#newIncharge{
-  position: relative;
-  border-radius: 10px;
-  width: 269px;
-  height: 35px;
-  top: -10px;
-  left: 4.5%;
-}
-#newOffice{
-  position: relative;
-  border-radius: 10px;
-  width: 269px;
-  height: 35px;
-  top: -5px;
-  left: 7%;
 }
 
 

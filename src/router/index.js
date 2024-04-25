@@ -9,6 +9,7 @@ import viewapps from "../components/viewapps.vue";
 import cashierOffice from "../components/cashierOffice.vue";
 import registration from "../components/registration.vue";
 import confirmation from "../components/confirmation.vue";
+import adminVinformation from "../components/adminVinformation.vue";
 
 
 const routes = [
@@ -20,6 +21,11 @@ const routes = [
       path: "/admin",
       name: "Admin",
       component: admin,
+    },
+    {
+      path: "/adminVinformation",
+      name: "Admin Visitor Information",
+      component: adminVinformation,
     },
     {
       path: "/booking",
