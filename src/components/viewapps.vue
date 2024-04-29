@@ -59,6 +59,7 @@
   background-repeat: no-repeat;
   display:flex;
 }
+
 p{
   color: rgb(255, 255, 255);
 }

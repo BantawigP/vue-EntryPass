@@ -79,9 +79,9 @@ const addCategory = () => {
             </div>  
           </div>
           <nav class="nav flex-column">
-            <p class="welcomMess">Hi Visitors!</p>
-            <a class="nav-link-book" href="#">Book Appointment</a>
-            <a class="nav-link-view" href="/viewapps">View Appointment</a>
+            <p class="welcomMess">Hi Admin!</p>
+            <a class="nav-link-acc" href="/admin">View Account</a>
+            <a class="nav-link-view" href="#">View Appointment</a>
             <a class="nav-link-settings" href="#">Settings</a>
             <a class="nav-link-logout" href="/">Logout</a>
           </nav>
@@ -197,7 +197,7 @@ height: 755px;
   margin-top: 37px;
   margin-left: 23px;
 }
-.nav-link-book{
+.nav-link-acc{
   color: rgb(255, 255, 255);
   text-decoration: none;
   margin-left: 23px;
@@ -205,7 +205,7 @@ height: 755px;
   margin-top: 70px;
 }
 .nav-link-view{
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   text-decoration: none;
   margin-left: 23px;
   margin-bottom: 319px;
@@ -239,17 +239,10 @@ height: 755px;
   left: 19.5%;
 }
 
-.VinformationPinkbackground{
-  position: absolute;
-  border: 1px solid;
-  width: 1319px;
-  height: 641px;
-  top: 105%;
-  right: 5.6%;
-  padding: 2% 0 0;
-  margin: auto;
-  background-color:rgba(234, 198, 235, 100%);
+h1{
+  color: aliceblue;
 }
+
 .VinformationWhitebackground{
   position: absolute;
   border: 1px solid;
@@ -257,7 +250,7 @@ height: 755px;
   height: 496px;
   right: 10%;
   bottom: 8%;
-  background-color:rgba(217, 217, 217, 50%);
+  background-color: #f27b8bdd;
 }
 
 .VisitorInformation{

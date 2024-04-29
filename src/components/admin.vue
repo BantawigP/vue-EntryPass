@@ -132,9 +132,9 @@ const addCategory = () => {
             </div>  
           </div>
           <nav class="nav flex-column">
-            <p class="welcomMess">Hi Visitors!</p>
-            <a class="nav-link-book" href="#">Book Appointment</a>
-            <a class="nav-link-view" href="/viewapps">View Appointment</a>
+            <p class="welcomMess">Hi Admin!</p>
+            <a class="nav-link-acc" href="#">Account Information</a>
+            <a class="nav-link-view" href="/adminVinformation">Visitor Information</a>
             <a class="nav-link-settings" href="#">Settings</a>
             <a class="nav-link-logout" href="/">Logout</a>
           </nav>
@@ -142,10 +142,10 @@ const addCategory = () => {
       </div>
 
 <div class="Pinkbackground">
-  <div class="Whitebackground1">
+  <div class="backgroundpink">
   
     <h1 class="AccountInformation">Account Information</h1>
-    <DataTable :value="account" tableStyle="min-width: 50rem">
+    <DataTable :value="account" tableStyle="min-width: 50rem; margin: 0 auto;">
       <Column field="id" header="ID"></Column>
       <Column field="incharge" header="In-charge"></Column>
       <Column field="office" header="Office"></Column>
@@ -221,6 +221,7 @@ p{
   margin-top: 55px;
   padding-right: 45px; 
 }
+
 .welcomMess{
       margin-left: 23px;
       margin-top: 44px;
@@ -239,8 +240,8 @@ height: 755px;
   margin-top: 37px;
   margin-left: 23px;
 }
-.nav-link-book{
-  color: rgb(255, 255, 255);
+.nav-link-acc{
+  color: rgb(0, 0, 0);
   text-decoration: none;
   margin-left: 23px;
   margin-bottom:24px;
@@ -273,27 +274,20 @@ height: 755px;
   justify-content: center;
 }
 
-
-
-.Pinkbackground{
-  position: absolute;
-  border: 1px solid;
-  width: 1319px;
-  height: 641px;
-  top: 20%;
-  right: 2%;
-  padding: 2% 0 0;
-  margin: auto;
-  background-color:rgba(234, 198, 235, 100%);
+h1{
+  color: aliceblue;
 }
-.Whitebackground1{
+
+
+.backgroundpink{
   position: absolute;
   border: 1px solid;
   width: 1045px;
   height: 496px;
   right: 10%;
   bottom: 8%;
-  background-color:rgba(217, 217, 217, 50%);
+  background-color: #f27b8bdd;
+
 }
 .AccountInformation{
   position: absolute;
