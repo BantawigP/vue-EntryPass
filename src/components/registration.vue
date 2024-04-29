@@ -12,8 +12,11 @@ const validate = () => {
                 alert('Create account successful!');
                 window.open('/home','_self');
             }
+            else if(firstname ==='' && password === '' && lastname ===''){
+              alert('You have not entered any details. Please try again')
+            }
             else {
-                alert('The account is already createds. Please try logging in to your account.');
+                alert('The account is already created. Please try logging in to your account.');
             }
         };
 </script>
