@@ -116,6 +116,8 @@ const addCategory = () => {
 </script>
 
 <template>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <body>
   
     <!-- Account Information -->
@@ -133,8 +135,8 @@ const addCategory = () => {
           </div>
           <nav class="nav flex-column">
             <p class="welcomMess">Hi Admin!</p>
-            <a class="nav-link-acc" href="#">Account Information</a>
-            <a class="nav-link-view" href="/adminVinformation">Visitor Information</a>
+            <a class="nav-link-acc" href="#">View Account</a>
+            <a class="nav-link-view" href="/adminVinformation">View Appointment</a>
             <a class="nav-link-settings" href="#">Settings</a>
             <a class="nav-link-logout" href="/">Logout</a>
           </nav>
@@ -203,7 +205,7 @@ const addCategory = () => {
 
 <style scoped>
  .frame{
-  width: 1528px;
+  width: 100%;
   height: 755px;
   position:relative;
   background-image: url('/src/assets/bg.png');

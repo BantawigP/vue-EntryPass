@@ -70,7 +70,7 @@ const addCategory = () => {
 
 <template>
   <body>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div class="Whitebackground"><form class="logos">
   <img src="/src/assets/uic1.png" class="uiclogo">
   <img src="/src/assets/myuic.png" class="myuic">

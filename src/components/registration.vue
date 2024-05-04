@@ -23,7 +23,7 @@ const validate = () => {
 
 
 <template>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
  <div class="frame">
  <div class="form">
@@ -48,7 +48,7 @@ const validate = () => {
 
 <style scoped>
 .frame{
-  width: 1528px;
+  width: 100%;
   height: 755px;
   padding: 1% 0 0;
   position:relative;
