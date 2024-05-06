@@ -50,7 +50,7 @@ const validate = () => {
 <style scoped>
 .frame{
   width: 100%;
-  height: 755px;
+  height: 100vh;
   padding: 1% 0 0;
   position:relative;
   background-image: url('/src/assets/bg.png');
@@ -58,27 +58,28 @@ const validate = () => {
   background-repeat: no-repeat;
 }
 .form{
-  width: 473px;
-    height: 524px;
+  width: 70%;
+    height: 70%;
     padding-top: 2px;
     margin: 66px auto;
     background-color: rgba(217, 217, 217, 85%);
     border-radius: 15px;
+    max-width: 300px;
 }
 
 .myuic{
 position: relative;
 margin: auto;
-height:60px;
-width:112px;
+height:25%;
+width:25%;
 display: block;
 
 }
 .uic1{
 position: relative;
 margin:auto;
-height: 150px;
-width:150px;
+height: 25%;
+width:25%;
 display: block;
 }
 
@@ -90,8 +91,8 @@ display: block;
   margin-left: auto;
   background: #FFFDFD;
 border-radius: 20px;
-height: 48px;
-width: 275px;
+height: 15%;
+width: 70%;
 }
 .pass{
   display: block;
@@ -103,13 +104,13 @@ width: 275px;
     margin-bottom: 36px;
     margin-left: auto;
   border-radius: 20px;
-height: 48px;
-width: 275px;
+  height: 15%;
+width: 70%;
 
 }
 
 .logos {
-  margin-bottom: 56px;
+  margin-bottom: 15%;
 }
 button{
 display: block;
@@ -118,8 +119,8 @@ margin:auto;
 background-color: #FA7B9F;
 border-radius: 20px;
 border-bottom: 10px;
-height: 44px;
-width: 180px;
+height: 15%;
+width: 50%;
 }
 p{
 text-align: center;
@@ -130,4 +131,5 @@ text-align: center;
 input {
  text-align: center;
 }
+
 </style>
