@@ -47,6 +47,7 @@ const validate = () => {
 </template>
 
 <style scoped>
+@media (max-width: 700px) {
 .frame{
   width: 100%;
   height: 100vh;
@@ -63,6 +64,105 @@ const validate = () => {
     margin: 66px auto;
     background-color: rgba(217, 217, 217, 85%);
     border-radius: 15px;
+    
+}
+
+.myuic{
+position: relative;
+margin: auto;
+height:25%;
+width:25%;
+display: block;
+
+}
+.uic1{
+position: relative;
+margin:auto;
+height:25%;
+width:25%;
+display: block;
+}
+
+.fname{
+  display: block;
+  position: relative;
+  margin-right: auto;
+  margin-bottom: 12px;
+  margin-left: auto;
+  background: #FFFDFD;
+border-radius: 20px;
+height: 15%;
+width: 70%;
+}
+.lname{
+  display: block;
+  position: relative;
+  margin-right: auto;
+  margin-bottom: 12px;
+  margin-left: auto;
+  background: #FFFDFD;
+border-radius: 20px;
+height: 15%;
+width: 70%;
+}
+.pass{
+  display: block;
+  position: relative;
+  margin:auto;
+  background: #FFFDFD;
+  margin-top: auto;
+    margin-right: auto;
+    margin-bottom: 14px;
+    margin-left: auto;
+  border-radius: 20px;
+  height: 15%;
+width: 70%;
+
+}
+
+.logos {
+  margin-bottom: 17px;
+}
+button{
+display: block;
+position: relative;
+margin:auto;
+background-color: #FA7B9F;
+border-radius: 20px;
+border-bottom: 12px;
+height: 44px;
+width: 180px;
+}
+p{
+text-align: center;
+}
+::placeholder{
+  text-align: center;
+}
+input {
+ text-align: center;
+}
+}
+@media (min-width: 700px) {
+
+.frame{
+  width: 100%;
+  height: 100vh;
+  padding: 1% 0 0;
+  position:relative;
+  background-image: url('/src/assets/bg.png');
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+.form{
+  width: 60%;
+    height: 70%;
+    padding-top: 2px;
+    margin: 66px auto;
+    background-color: rgba(217, 217, 217, 85%);
+    border-radius: 15px;
+    min-width: 500px;
+    max-width: 380px;
     
 }
 
@@ -140,5 +240,6 @@ text-align: center;
 }
 input {
  text-align: center;
+}
 }
 </style>
