@@ -49,7 +49,7 @@ const validate = () => {
 <style scoped>
 .frame{
   width: 100%;
-  height: 755px;
+  height: 100vh;
   padding: 1% 0 0;
   position:relative;
   background-image: url('/src/assets/bg.png');
@@ -57,12 +57,13 @@ const validate = () => {
   background-repeat: no-repeat;
 }
 .form{
-  width: 473px;
-    height: 524px;
+  width: 60%;
+    height: 70%;
     padding-top: 2px;
     margin: 66px auto;
     background-color: rgba(217, 217, 217, 85%);
     border-radius: 15px;
+    
 }
 
 .myuic{

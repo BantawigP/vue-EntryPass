@@ -5,21 +5,21 @@ import { RouterLink } from 'vue-router';
 
 
 const validate = () => {
-            const username = document.getElementById('user').value;
+            const iemail = document.getElementById('email').value;
             const password = document.getElementById('pass').value;
 
-            if (username === 'admin' && password === 'password') {
+            if (iemail === 'admin' && password === 'password') {
                 alert('Login successful!');
                 window.open('/admin','_self');
             }
-            else if(username === 'cashier' && password === 'password'){
+            else if(iemail === 'cashier' && password === 'password'){
               window.open('/cashierOffice','_self');
             }
-            else if(username === 'visitor' && password === 'password'){
+            else if(iemail === 'visitor' && password === 'password'){
               window.open('/home','_self');
             } 
             else {
-                alert('Invalid username or password. Please try again.');
+                alert('Invalid email or password. Please try again.');
             }
         };
 </script>
@@ -34,7 +34,7 @@ const validate = () => {
   <img src="/src/assets/myuic.png" class="myuic">
 </form>
 <form class="loginform">
-  <InputText class="user" id="user" v-model="value1" type="text" size="small" placeholder="Username"/>
+  <InputText class="email" id="email" v-model="value1" type="text" size="small" placeholder="Email"/>
   <InputText class="pass" id="pass" v-model="value2" type="password" size="small" placeholder="Password"/>
   <Button @click="validate()">Login</Button>
    <p>
@@ -85,7 +85,7 @@ width:25%;
 display: block;
 }
 
-.user{
+.email{
   display: block;
   position: relative;
   margin-right: auto;
@@ -172,7 +172,7 @@ width:150px;
 display: block;
 }
 
-.user{
+.email{
   display: block;
   position: relative;
   margin-right: auto;
