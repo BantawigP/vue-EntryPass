@@ -4,15 +4,15 @@ import Button from 'primevue/button';
 import { RouterLink } from 'vue-router';
 
 const validate = () => {
-            const firstname = document.getElementById('fname').value;
-            const lastname = document.getElementById('lname').value;
+            const email = document.getElementById('iemail').value;
+            const username = document.getElementById('user').value;
             const password = document.getElementById('pass').value;
 
-            if (firstname === 'test' && password === 'test' && lastname === 'test') {
+            if (email === 'test' && password === 'test' && username === 'test') {
                 alert('Create account successful!');
                 window.open('/home','_self');
             }
-            else if(firstname ==='' && password === '' && lastname ===''){
+            else if(email ==='' && password === '' && username ===''){
               alert('You have not entered any details. Please try again')
             }
             else {
@@ -32,8 +32,8 @@ const validate = () => {
   <img src="/src/assets/myuic.png" class="myuic">
 </form>
 <form class="loginform">
-  <InputText class="fname" id="fname" v-model="value1" type="text" size="small" placeholder="First Name"/>
-  <InputText class="lname" id="lname" v-model="value2" type="text" size="small" placeholder="Last Name"/>
+  <InputText class="iemail" id="iemail" v-model="value1" type="text" size="small" placeholder="Email"/>
+  <InputText class="user" id="user" v-model="value2" type="text" size="small" placeholder="Username"/>
   <InputText class="pass" id="pass" v-model="value3" type="text" size="small" placeholder="Password"/>
   <Button @click="validate()">Register</Button>
    <p>
@@ -83,7 +83,7 @@ width:25%;
 display: block;
 }
 
-.fname{
+.iemail{
   display: block;
   position: relative;
   margin-right: auto;
@@ -94,7 +94,7 @@ border-radius: 20px;
 height: 15%;
 width: 70%;
 }
-.lname{
+.user{
   display: block;
   position: relative;
   margin-right: auto;
