@@ -182,7 +182,7 @@ width:150px;
 display: block;
 }
 
-.fname{
+.iemail{
   display: block;
   position: relative;
   margin-right: auto;
@@ -193,7 +193,7 @@ border-radius: 20px;
 height: 48px;
 width: 275px;
 }
-.lname{
+.user{
   display: block;
   position: relative;
   margin-right: auto;
