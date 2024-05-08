@@ -4,7 +4,12 @@ import Column from 'primevue/column';
 import Button from 'primevue/button';
 import InputText from 'primevue/inputtext';
 import { ref } from 'vue';
+import 'primeicons/primeicons.css'
 
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('collapsed');
+}
 const account = ref([
   {
     id: 1,
@@ -124,7 +129,8 @@ const addCategory = () => {
 
     <div class="frame">
       <div class="sidepanel">
-        <aside>
+        <aside id="sidebar">
+      <i class="pi pi-bars toggle-icon" @click="toggleSidebar"></i>
           <div class="wrapper">
             <div class="image_logo">
               <img class="logo" src="/src/assets/logo.enp.png">
@@ -162,7 +168,7 @@ const addCategory = () => {
     </DataTable>
 
     <!-- Editing Account -->
-    <div v-if="editingAccount">
+    <div id="mainframe" v-if="editingAccount">
       <h2>Edit Account</h2>
       <form @submit="saveEditedAccount">
         <div>
@@ -206,13 +212,24 @@ const addCategory = () => {
 <style scoped>
  .frame{
   width: 100%;
-  height: 755px;
+  height: 100vh;
   position:relative;
   background-image: url('/src/assets/bg.png');
   background-size:cover;
   background-repeat: no-repeat;
   display:flex;
   overflow: auto;
+}
+
+i{
+  color: aliceblue;
+}
+
+.sidepanel{
+  display:flex;
+}
+.collapsed {
+    width: 50px;
 }
 p{
   color: rgb(255, 255, 255);
@@ -228,11 +245,13 @@ p{
       margin-left: 23px;
       margin-top: 44px;
     }
-aside{
+    aside{
 float: left;
 background-color: #F27B8A;
 width: 288.84px;
-height: 755px;
+height: 100vh;
+overflow-y: auto;
+transition: width 0.3s ease;
 }
 .logo{
   width: 39.79px;
@@ -284,11 +303,16 @@ h1{
 .backgroundpink{
   position: absolute;
   border: 1px solid;
-  width: 1045px;
-  height: 496px;
-  right: 10%;
   bottom: 8%;
-  background-color: #f27b8bdd;
+  background-color: rgba(238, 139, 204, 0.24); 
+  width: calc(100% - 288.84px); 
+  height: 100vh; 
+  float: right;  
+  top: 0; 
+  right: 0;
+  flex: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
 
 }
 .AccountInformation{

@@ -1,5 +1,10 @@
 <script setup>
+import 'primeicons/primeicons.css'
 
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('collapsed');
+}
 </script>
 
 <template>
@@ -7,7 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <div class="frame">
   <div class="sidepanel">
-  <aside>
+    <aside id="sidebar">
+      <i class="pi pi-bars toggle-icon" @click="toggleSidebar"></i>
     <div class="wrapper">
     <div class="image_logo">
           <img class="logo" src="/src/assets/logo.enp.png">
@@ -60,12 +66,19 @@
 
 <style scoped>
 .frame{
-  width: 1528px;
-  height: 755px;
+  width: 100%;
+  height: 100vh;
   position:relative;
   background-image: url('/src/assets/bg.png');
   background-size:cover;
   background-repeat: no-repeat;
+  display:flex;
+}
+i{
+  color: aliceblue;
+}
+
+.sidepanel{
   display:flex;
 }
 p{
@@ -81,11 +94,16 @@ p{
       margin-left: 23px;
       margin-top: 44px;
     }
+    .collapsed .mainframe {
+    margin-left: 10px;
+}
 aside{
 float: left;
 background-color: #F27B8A;
 width: 288.84px;
-height: 755px;
+height: 100vh;
+overflow-y: auto;
+transition: width 0.3s ease;
 }
 .logo{
   width: 39.79px;
@@ -135,7 +153,9 @@ height: 755px;
   float: right;  
   top: 0; 
   right: 0;
-  flex:1; 
+  flex: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
 }
 #frame1{
  
@@ -146,6 +166,9 @@ height: 755px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.collapsed {
+    width: 50px;
 }
 
 .image-container {

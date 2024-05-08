@@ -1,7 +1,12 @@
 <script setup>
 import { RouterLink } from 'vue-router';
 import Button from 'primevue/button';
+import 'primeicons/primeicons.css'
 
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('collapsed');
+}
 const validate = () => {
             const Fname = document.getElementById('fname').value;
             const Lname = document.getElementById('lname').value;
@@ -35,7 +40,8 @@ const validate = () => {
   <body>
     <div class="frame">
       <div class="sidepanel">
-        <aside>
+        <aside id="sidebar">
+      <i class="pi pi-bars toggle-icon" @click="toggleSidebar"></i>
           <div class="wrapper">
             <div class="image_logo">
               <img class="logo" src="/src/assets/logo.enp.png">

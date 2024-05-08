@@ -1,25 +1,5 @@
 <script setup>
-/*import { onBeforeMount } from 'vue';
-import { useRouter } from 'vue-router';
-import axios from 'axios'
-const router = useRouter();
 
-onBeforeMount(() =>
-{router.push('/')}
-);
-const fetch =async () =>{
-  try{
-    const response = await axios.get('');
-    console.log(response.data)
-  }
-  catch (error){
-    console.error('Error Message:', error);
-  }
-  finally{
-
-  }
-};
-fetch()**/
 </script>
 
 
@@ -31,4 +11,14 @@ fetch()**/
 
 </template>
 
-<style scoped></style>
+<style scoped>
+.frame{
+  width: 100%;
+  height: 100vh;
+  padding: 1% 0 0;
+  position:relative;
+  background-image: url('/src/assets/bg.png');
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+</style>

@@ -33,7 +33,8 @@ const validate = () => {
 </form>
 <form class="loginform">
   <InputText class="iemail" id="iemail" v-model="value1" type="text" size="small" placeholder="Email"/>
-  <InputText class="user" id="user" v-model="value2" type="text" size="small" placeholder="Username"/>
+  <InputText class="fname" id="fname" v-model="value2" type="text" size="small" placeholder="First Name"/>
+  <InputText class="lname" id="lname" v-model="value2" type="text" size="small" placeholder="Last Name"/>
   <InputText class="pass" id="pass" v-model="value3" type="text" size="small" placeholder="Password"/>
   <Button @click="validate()">Register</Button>
    <p>
@@ -59,7 +60,7 @@ const validate = () => {
 }
 .form{
   width: 60%;
-    height: 70%;
+    height: 75%;
     padding-top: 2px;
     margin: 66px auto;
     background-color: rgba(217, 217, 217, 85%);
@@ -94,7 +95,18 @@ border-radius: 20px;
 height: 15%;
 width: 70%;
 }
-.user{
+.fname{
+  display: block;
+  position: relative;
+  margin-right: auto;
+  margin-bottom: 12px;
+  margin-left: auto;
+  background: #FFFDFD;
+border-radius: 20px;
+height: 15%;
+width: 70%;
+}
+.lname{
   display: block;
   position: relative;
   margin-right: auto;
@@ -156,7 +168,7 @@ input {
 }
 .form{
   width: 60%;
-    height: 70%;
+    height: 75%;
     padding-top: 2px;
     margin: 66px auto;
     background-color: rgba(217, 217, 217, 85%);
@@ -193,7 +205,18 @@ border-radius: 20px;
 height: 48px;
 width: 275px;
 }
-.user{
+.lname{
+  display: block;
+  position: relative;
+  margin-right: auto;
+  margin-bottom: 12px;
+  margin-left: auto;
+  background: #FFFDFD;
+border-radius: 20px;
+height: 48px;
+width: 275px;
+}
+.fname{
   display: block;
   position: relative;
   margin-right: auto;

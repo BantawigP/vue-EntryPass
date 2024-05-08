@@ -1,5 +1,10 @@
 <script setup>
+import 'primeicons/primeicons.css'
 
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('collapsed');
+}
 </script>
 
 <template>
@@ -7,7 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <div class="frame">
   <div class="sidepanel">
-  <aside>
+    <aside id="sidebar">
+      <i class="pi pi-bars toggle-icon" @click="toggleSidebar"></i>
     <div class="wrapper">
     <div class="image_logo">
           <img class="logo" src="/src/assets/logo.enp.png">

@@ -1,5 +1,10 @@
 <script setup> 
+import 'primeicons/primeicons.css'
 
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('collapsed');
+}
 </script> 
 
 <template> 
