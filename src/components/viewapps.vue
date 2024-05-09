@@ -24,15 +24,16 @@ function toggleSidebar() {
     </div>
     <nav class="nav flex-column">
       <p class="welcomMess">Hi Visitors!</p>
-  <a class="nav-link-book" href="/booking">Book Appointment</a>
-  <a class="nav-link-view" href="/viewapps">View Appointment</a>
-  <a class="nav-link-settings" href="#">Settings</a>
-  <a class="nav-link-logout" href="/">Logout</a>
+  <a class="nav-link-book" href="/booking"><i class="pi pi-book" > Book Appointment</i></a>
+  <a class="nav-link-view" href="/viewapps"><i class="pi pi-eye" > View Appointment</i></a>
+  <a class="nav-link-settings" href="#"><i class="pi pi-cog" > Settings</i></a>
+  <a class="nav-link-logout" href="/"><i class="pi pi-sign-out" > Logout</i></a>
 </nav>
   </aside>
 </div>
  <div id="mainframe">
-  <i class="pi pi-bars toggle-icon" @click="toggleSidebar"></i>
+  <div id="frame1">
+  <i id="toggleIcon" class="pi pi-bars toggle-icon" @click="toggleSidebar"></i>
       <table>
     <thead>
         <tr>
@@ -49,7 +50,7 @@ function toggleSidebar() {
     </tbody>
 </table>
 
-
+</div>
   </div>
  </div>
 
@@ -58,41 +59,28 @@ function toggleSidebar() {
 
 <style scoped>
 .frame{
-  width: 1528px;
-  height: 755px;
+  width: 100%;
+  height: 100vh;
   position:relative;
   background-image: url('/src/assets/bg.png');
   background-size:cover;
   background-repeat: no-repeat;
   display:flex;
 }
-
+i{
+  color: aliceblue;
+  
+}
 p{
   color: rgb(255, 255, 255);
 }
-#mainframe{
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: rgba(238, 139, 204, 0.24); 
-  }
+.sidepanel{
+  display:flex;
+}/**para sa sidepanel toggle */    
+.collapsed .mainframe {
+    margin-left: 10px;
+}/**para sa sidepanel toggle */
 
-  #frame1{
-    width: 1054.81px;
-    height: 639px;
-    background-color: rgb(217, 217, 217,0.38);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-aside{
-float: left;
-background-color: #F27B8A;
-width: 288.84px;
-height: 755px;
-}
 .logo{
   width: 39.79px;
   height: 35.01px;
@@ -134,13 +122,57 @@ height: 755px;
   align-items: center;
   justify-content: center;
 }
-.header_title{
+.welcomMess{
+      margin-left: 23px;
+      margin-top: 44px;
+    }
+  .header_title{
   flex: 2;
   text-align: left;
   margin-top: 55px;
   padding-right: 45px;
   
 }
+    #tlabels{
+      color: #F27B8A;
+      background-color: #D9D9D9;
+      text-align: center;
+    }
+
+    @media (min-width: 1130px) {
+  #mainframe{
+  background-color: rgba(238, 139, 204, 0.24); 
+  width: calc(100% - 288.84px); 
+  height: 100vh; 
+  float: right;  
+  top: 0; 
+  right: 0;
+  flex: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+#frame1{
+ float: center;
+ width: 50%;
+ padding: 20px;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+
+  }
+  aside{
+float: left;
+background-color: #F27B8A;
+width: 100%;
+height: 100vh;
+
+}
+#toggleIcon{
+  visibility: hidden;
+}
+
 .image-container {
         display: flex;
         flex-wrap: wrap;
@@ -161,8 +193,8 @@ height: 755px;
     }
     table{
       background-color: rgb(217, 217, 2217, 38%);
-      width:1054.81px ;
-      height: 279.67px;
+      width:140% ;
+      height: 60vh;
     }
     #title_header{
     color: rgb(255, 255, 255);
@@ -175,19 +207,90 @@ height: 755px;
     }
     .header_table{
     background-color: rgb(215, 122, 135);
-    height:60.07px ;
-    width:1054.81px ;
-    }
-    #tlabels{
-      color: #F27B8A;
-      background-color: #D9D9D9;
-      text-align: center;
-    }
+    height:100%;
+    width:100% ;
   
+  }
+}
+  @media (max-width: 1130px){
+    #mainframe{
+  background-color: rgba(238, 139, 204, 0.24); 
+  width: 100%; 
+  height: 100%; 
+  float: right;  
+  top: 0; 
+  right: 0;
+  flex: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+#frame1{
+  float: center;
+  width: 50%;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-    .welcomMess{
-      margin-left: 23px;
-      margin-top: 44px;
+
+.collapsed {
+    visibility:hidden;
+
+}
+aside{
+float: left;
+background-color: #F27B8A;
+width: 55%;
+height: 100vh;
+overflow-y: auto; /**para sa sidepanel toggle */
+transition: width 0.3s ease; /**para sa sidepanel toggle */
+}
+.sidepanel{
+  display:flex;
+  background-color: rgba(238, 139, 204, 0.24); 
+  width: 46%; 
+}
+.image-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+        margin-bottom: 20px;
+        margin-left: 47px;
     }
-    
+
+.image-container div {
+        width: 45%; 
+        margin-bottom: 10px;
+        margin-top: 47px;
+
+    }
+    .image-container img {
+        max-width: 50%;
+        height: auto;
+    }
+
+    #title_header{
+    color: rgb(255, 255, 255);
+    margin-top: 21px;
+    margin-left: 27px;
+    margin-bottom: 21px;
+    font-size:15px;
+    background-color: #F27B8A;
+    height: 49.86px;
+    width: 100%;
+    }
+    .header_table{
+    background-color: rgb(215, 122, 135);
+    height:80% ;
+    width: 100%;
+    }
+    table{
+      background-color: rgb(217, 217, 2217, 38%);
+      width:150% ;
+      height: 60vh;
+    }
+   
+  }
 </style>

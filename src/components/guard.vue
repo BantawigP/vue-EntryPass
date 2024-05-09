@@ -56,8 +56,8 @@ function toggleSidebar() {
 
 <style scoped>
 .frame{
-  width: 1528px;
-  height: 755px;
+  width: 100%;
+  height: 100vh;
   position:relative;
   background-image: url('/src/assets/bg.png');
   background-size:cover;

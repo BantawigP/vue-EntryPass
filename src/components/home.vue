@@ -162,8 +162,7 @@ float: left;
 background-color: #F27B8A;
 width: 100%;
 height: 100vh;
-overflow-y: auto; /**para sa sidepanel toggle */
-transition: width 0.3s ease; /**para sa sidepanel toggle */
+
 }
 #frame1{
  
