@@ -48,8 +48,6 @@ const validate = () => {
 
 
 <style scoped>
-@media (max-width: 700px) {
-  
 .frame{
   width: 100%;
   height: 100vh;
@@ -59,16 +57,6 @@ const validate = () => {
   background-size:cover;
   background-repeat: no-repeat;
 }
-.form{
-  width: 60%;
-    height: 70%;
-    padding-top: 2px;
-    margin: 66px auto;
-    background-color: rgba(217, 217, 217, 85%);
-    border-radius: 15px;
-    
-}
-
 .myuic{
 position: relative;
 margin: auto;
@@ -83,6 +71,18 @@ margin:auto;
 height: 25%;
 width:25%;
 display: block;
+}
+
+@media (max-width: 700px) {
+
+.form{
+  width: 60%;
+    height: 70%;
+    padding-top: 2px;
+    margin: 66px auto;
+    background-color: rgba(217, 217, 217, 85%);
+    border-radius: 15px;
+    
 }
 
 .email{
@@ -136,15 +136,7 @@ input {
 }
 @media (min-width: 700px) {
   
-  .frame{
-  width: 100%;
-  height: 100vh;
-  padding: 1% 0 0;
-  position:relative;
-  background-image: url('/src/assets/bg.png');
-  background-size:cover;
-  background-repeat: no-repeat;
-}
+
 .form{
   
     height: 75%;
@@ -156,21 +148,6 @@ input {
     max-width: 380px;
 }
 
-.myuic{
-position: relative;
-margin: auto;
-height:60px;
-width:112px;
-display: block;
-
-}
-.uic1{
-position: relative;
-margin:auto;
-height: 150px;
-width:150px;
-display: block;
-}
 
 .email{
   display: block;

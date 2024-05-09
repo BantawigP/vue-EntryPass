@@ -89,6 +89,23 @@ const validate = () => {
   background-repeat: no-repeat;
   display:flex;
 }
+i{
+  color: aliceblue;
+}
+aside{
+float: left;
+background-color: #F27B8A;
+width: 288.84px;
+height: 755px;
+overflow-y: auto; /**para sa sidepanel toggle */
+transition: width 0.3s ease; /**para sa sidepanel toggle */
+}
+.sidepanel{
+  display:flex;
+}/**para sa sidepanel toggle */    
+.collapsed .mainframe {
+    margin-left: 10px;
+} /**para sa sidepanel toggle */
 p{
   color: rgb(255, 255, 255);
 }
@@ -102,12 +119,7 @@ p{
       margin-left: 23px;
       margin-top: 44px;
     }
-aside{
-float: left;
-background-color: #F27B8A;
-width: 288.84px;
-height: 755px;
-}
+
 .logo{
   width: 39.79px;
   height: 35.01px;
@@ -157,6 +169,7 @@ height: 755px;
     align-items: center;
     padding: 20px;
     background-color: rgba(238, 139, 204, 0.24); 
+    transition: margin-left 0.3s ease; /**for collapse */
   }
 
   #frame1{
@@ -166,7 +179,17 @@ height: 755px;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    float: center;
+  padding: 20px;
+  position: absolute;
+  top: 55%;
+  left: 55%;
+  transform: translate(-50%, -50%);
   }
+  .collapsed {
+    width: 50px;
+}
+
 
   button{
 display: block;

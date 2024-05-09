@@ -13,7 +13,7 @@ function toggleSidebar() {
  <div class="frame">
   <div class="sidepanel">
     <aside id="sidebar">
-      <i class="pi pi-bars toggle-icon" @click="toggleSidebar"></i>
+      
     <div class="wrapper">
     <div class="image_logo">
           <img class="logo" src="/src/assets/logo.enp.png">
@@ -32,7 +32,7 @@ function toggleSidebar() {
   </aside>
 </div>
  <div id="mainframe">
-   
+  <i class="pi pi-bars toggle-icon" @click="toggleSidebar"></i>
       <table>
     <thead>
         <tr>
@@ -189,4 +189,5 @@ height: 755px;
       margin-left: 23px;
       margin-top: 44px;
     }
+    
 </style>
