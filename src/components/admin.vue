@@ -100,8 +100,8 @@ const addAccount = () => {
   <div class="frame1">
     <i class="pi pi-bars toggle-icon" @click="toggleSidebar"></i>
 
-    <h1 class="AccountInformation">Account Information</h1>
-    <DataTable :value="account" resizableColumns columnResizeMode="fit" showGridlines tableStyle="min-width: 50rem">
+   
+    <DataTable :value="account" resizableColumns columnResizeMode="fit" showGridlines tableStyle="max-width: 45rem;  ">
       <Column field="id" header="ID"></Column>
       <Column field="incharge" header="In-charge"></Column>
       <Column field="office" header="Office"></Column>
@@ -117,7 +117,7 @@ const addAccount = () => {
 
     <!-- Editing Account -->
     <div id="mainframe" v-if="editingAccount">
-      <h2>Edit Account</h2>
+      <h3>Edit Account</h3>
       <form @submit="saveEditedAccount">
         <div>
           <label for="editedIncharge">In-charge:</label>
@@ -136,7 +136,7 @@ const addAccount = () => {
 
     <!-- Add Account Form -->
     <div>
-      <h2 class="AddAccount">Add Account</h2>
+      <h3 class="AddAccount">Add Account</h3>
       <form @submit.prevent="addAccount">
         <div>
           <label class="InCharge" for="newIncharge">In-charge:</label>
@@ -174,7 +174,8 @@ i{
 
 .sidepanel{
   display:flex;
-  width: 46%; 
+  max-width: 288.84px;
+  
 }
 .collapsed {
    visibility: hidden;
@@ -260,6 +261,7 @@ h1{
   flex: 1;
   padding: 20px;
   transition: margin-left 0.3s ease;
+  overflow-x: auto;
 
 }
 .AccountInformation{
@@ -312,10 +314,139 @@ h1{
 .aside{
   width: 288.84px;
 }
+.frame1{
+  position: absolute;
+  border: 1px solid;
+  bottom: 8%;
+  background-color: rgba(238, 139, 204, 0.24); 
+  width: calc(100% - 288.84px); 
+  height: 100vh; 
+  float: right;  
+  top: 0; 
+  right: 0;
+  flex: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+
+}
+.AccountInformation{
+  position: absolute;
+  font-family: arial;
+  font-size: 35px;
+  left: 35%;
+  top: -18%;
+  font-family: arial;
+}
+
+.AddAccount{
+  position: relative;
+  left: 15%;
+  top: 0px;
+}
+#newIncharge{
+  position: relative;
+  border-radius: 10px;
+  width: 269px;
+  height: 35px;
+  top: -10px;
+  left: 4.5%;
+}
+#newOffice{
+  position: relative;
+  border-radius: 10px;
+  width: 269px;
+  height: 35px;
+  top: -5px;
+  left: 7%;
+}
+
+
+.p-button-primary{
+  position: relative;
+  border-radius: 10px;
+  top: 10px;
+  left: 19.5%;
+}
+
+
+.p-button-primary1{
+  position: relative;
+  border-radius: 10px;
+  top: 10px;
+  left: 16.5%;
+}
 }
 @media (max-width: 980px){
 .aside{
   width: 0px;
+}
+.mainframe{
+  width: max-content;
+}
+.sidepanel{
+  width: 30%; 
+}
+.frame1{
+  position: absolute;
+  border: 1px solid;
+  bottom: 8%;
+  background-color: rgba(238, 139, 204, 0.24); 
+  width: 60%; 
+  height: 100vh; 
+  float: right;  
+  top: 0; 
+  right: 0;
+  flex: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  overflow-x: auto;
+
+}
+.AccountInformation{
+  position: absolute;
+  font-family: arial;
+  font-size: 35px;
+  left: 35%;
+  top: -18%;
+  font-family: arial;
+}
+
+.AddAccount{
+  position: relative;
+  left: 15%;
+  top: 0px;
+}
+#newIncharge{
+  position: relative;
+  border-radius: 10px;
+  width: 269px;
+  height: 35px;
+  top: -10px;
+  left: 4.5%;
+}
+#newOffice{
+  position: relative;
+  border-radius: 10px;
+  width: 269px;
+  height: 35px;
+  top: -5px;
+  left: 7%;
+}
+
+
+.p-button-primary{
+  position: relative;
+  border-radius: 10px;
+  top: 10px;
+  left: 19.5%;
+}
+
+
+.p-button-primary1{
+  position: relative;
+  border-radius: 10px;
+  top: 10px;
+  left: 16.5%;
 }
 }
 </style>
