@@ -2,26 +2,31 @@
 import InputText from 'primevue/inputtext';
 import Button from 'primevue/button';
 import { RouterLink } from 'vue-router';
+import axios from 'axios';
+import { ref } from 'vue';
 
+const email = ref('');
+const password = ref('');
 
-const validate = () => {
-            const iemail = document.getElementById('email').value;
-            const password = document.getElementById('pass').value;
+const validate = async () => {
+  try {
+    const response = await axios.post('http://127.0.0.1:8000/api/Login/', {
+      email: email.value,
+      password: password.value
+    });
+      alert(response.data.message);
+      window.open('/home','_self');
 
-            if (iemail === 'admin' && password === 'password') {
-                alert('Login successful!');
-                window.open('/admin','_self');
-            }
-            else if(iemail === 'cashier' && password === 'password'){
-              window.open('/cashierOffice','_self');
-            }
-            else if(iemail === 'visitor' && password === 'password'){
-              window.open('/home','_self');
-            } 
-            else {
-                alert('Invalid email or password. Please try again.');
-            }
-        };
+  } catch (error) {
+      if (error.response && error.response.status === 401) {
+        // Unauthorized (invalid email or password)
+        console.error("Invalid email or password");
+      } else {
+      // Other errors (e.g., network error)
+        console.error("An error occurred. Please try again later.");
+      }
+      }
+};
 </script>
 
 <template>

@@ -130,7 +130,6 @@ const addCategory = () => {
     <div class="frame">
       <div class="sidepanel">
         <aside id="sidebar">
-      <i class="pi pi-bars toggle-icon" @click="toggleSidebar"></i>
           <div class="wrapper">
             <div class="image_logo">
               <img class="logo" src="/src/assets/logo.enp.png">
@@ -140,18 +139,19 @@ const addCategory = () => {
             </div>  
           </div>
           <nav class="nav flex-column">
-            <p class="welcomMess">Hi Admin!</p>
-            <a class="nav-link-acc" href="#">View Account</a>
-            <a class="nav-link-view" href="/adminVinformation">View Appointment</a>
-            <a class="nav-link-settings" href="#">Settings</a>
-            <a class="nav-link-logout" href="/">Logout</a>
-          </nav>
+      <p class="welcomMess">Hi Visitors!</p>
+  <a class="nav-link-book" href="/booking"> <i class="pi pi-book" > Book Appointment</i></a>
+  <a class="nav-link-view" href="/viewapps"><i class="pi pi-eye" > View Appointment</i></a>
+  <a class="nav-link-settings" href="#"><i class="pi pi-cog" > Settings</i></a>
+  <a class="nav-link-logout" href="/"><i class="pi pi-sign-out" > Logout</i></a>
+</nav>
         </aside>
       </div>
 
 <div class="Pinkbackground">
   <div class="backgroundpink">
-  
+    <i class="pi pi-bars toggle-icon" @click="toggleSidebar"></i>
+
     <h1 class="AccountInformation">Account Information</h1>
     <DataTable :value="account" tableStyle="min-width: 50rem; margin: 0 auto;">
       <Column field="id" header="ID"></Column>
