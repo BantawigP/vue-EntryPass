@@ -380,8 +380,16 @@ h1{
 .aside{
   width: 0px;
 }
-.mainframe{
-  width: max-content;
+#mainframe{
+  background-color: rgba(238, 139, 204, 0.24); 
+  width: calc(100% - 288.84px); 
+  height: 100%; 
+  float: right;  
+  top: 0; 
+  right: 0;
+  flex: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
 }
 .sidepanel{
   width: 30%; 
@@ -419,18 +427,18 @@ h1{
 #newIncharge{
   position: relative;
   border-radius: 10px;
-  width: 269px;
-  height: 35px;
-  top: -10px;
-  left: 4.5%;
+  width: 60%;
+  height: 8%;
+  top: -7px;
+  left:10%;
 }
 #newOffice{
   position: relative;
   border-radius: 10px;
-  width: 269px;
-  height: 35px;
-  top: -5px;
-  left: 7%;
+  width: 60%;
+  height: 8%;
+  top: 7px;
+  left: 15%;
 }
 
 
@@ -448,5 +456,12 @@ h1{
   top: 10px;
   left: 16.5%;
 }
+.sidepanel {
+  display: flex;
+  max-width: 288.84px;
+}
+
+
+
 }
 </style>
