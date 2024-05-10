@@ -2,23 +2,41 @@
 import InputText from 'primevue/inputtext';
 import Button from 'primevue/button';
 import { RouterLink } from 'vue-router';
+import { ref } from 'vue';
 
-const validate = () => {
-            const email = document.getElementById('iemail').value;
-            const username = document.getElementById('user').value;
-            const password = document.getElementById('pass').value;
+const email = ref('');
+const firstname = ref('');
+const lastname = ref('');
+const password = ref('');
 
-            if (email === 'test' && password === 'test' && username === 'test') {
-                alert('Create account successful!');
-                window.open('/home','_self');
-            }
-            else if(email ==='' && password === '' && username ===''){
-              alert('You have not entered any details. Please try again')
-            }
-            else {
-                alert('The account is already created. Please try logging in to your account.');
-            }
-        };
+const validate = async () => {
+  try {
+    const response = await fetch('http://127.0.0.1:8000/api/CreateAccount/?role=visitor', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email.value,
+        firstname: firstname.value,
+        lastname: lastname.value,
+        password: password.value,
+      }),
+    });
+
+    if (response.ok) {
+    const data = await response.json();
+    alert("Registration access!");
+    window.open('/','_self');
+    } else {
+      const errorData = await response.json();
+            alert(`Registration failed: ${errorData.detail}`);
+        }
+} catch (error) {
+  console.error('Error registering user:', error.message);
+  alert('Registration failed');
+  }
+};
 </script>
 
 
