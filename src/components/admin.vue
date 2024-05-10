@@ -65,59 +65,7 @@ const addAccount = () => {
   }
 };
 
-const categories = ref([
-  {
-    id: 1,
-    name: "Alice",
-    date: "12/13/23",
-    time:"12:13PM",
 
-  },
-  {
-    id: 2,
-    name: "Paul",
-    date: "12/13/23",
-    time:"12:13PM",
-  }
-]);
-
-const editingCategory = ref(null);
-const newCategory = ref({ name: '', date: '',time:'' }); // New category object
-
-const editCategory = (category) => {
-  editingCategory.value = { ...category.data }; // Set editingCategory to the selected category's data
-};
-
-const saveEditedCategory = () => {
-  if (editingCategory.value) {
-    // Update the category data with the edited values
-    const index = categories.value.findIndex((c) => c.id === editingCategory.value.id);
-    categories.value[index].name = editingCategory.value.name;
-    categories.value[index].date = editingCategory.value.date;
-    categories.value[index].time = editingCategory.value.time;
-    editingCategory.value = null;
-  }
-};
-
-const deleteCategory = (category) => {
-  // Find the index of the category
-  const index = categories.value.findIndex((c) => c.id === category.id);
-  // Remove the category from the categories array
-  categories.value.splice(index, 1);
-};
-
-const addCategory = () => {
-  if (newCategory.value.name && newCategory.value.time) {
-    // Generate a new unique ID (replace with your actual ID generation logic)
-    const newId = Math.max(...categories.value.map((c) => c.id)) + 1;
-    newCategory.value.id = newId;
-    categories.value.push({ ...newCategory.value });
-    // Clear the form for the next addition
-    newCategory.value.name = '';
-    newCategory.value.date = '';
-    newCategory.value.time = '';
-  }
-};
 </script>
 
 <template>
@@ -140,20 +88,20 @@ const addCategory = () => {
           </div>
           <nav class="nav flex-column">
       <p class="welcomMess">Hi Visitors!</p>
-  <a class="nav-link-book" href="/booking"> <i class="pi pi-book" > Book Appointment</i></a>
-  <a class="nav-link-view" href="/viewapps"><i class="pi pi-eye" > View Appointment</i></a>
+  <a class="nav-link-acc" href="/#"> <i class="pi pi-user" > View Accounts</i></a>
+  <a class="nav-link-view" href="/adminVinformation"><i class="pi pi-eye" > Visitor Accounts</i></a>
   <a class="nav-link-settings" href="#"><i class="pi pi-cog" > Settings</i></a>
   <a class="nav-link-logout" href="/"><i class="pi pi-sign-out" > Logout</i></a>
 </nav>
         </aside>
       </div>
 
-<div class="Pinkbackground">
-  <div class="backgroundpink">
+<div class="mainframe">
+  <div class="frame1">
     <i class="pi pi-bars toggle-icon" @click="toggleSidebar"></i>
 
     <h1 class="AccountInformation">Account Information</h1>
-    <DataTable :value="account" tableStyle="min-width: 50rem; margin: 0 auto;">
+    <DataTable :value="account" resizableColumns columnResizeMode="fit" showGridlines tableStyle="min-width: 50rem">
       <Column field="id" header="ID"></Column>
       <Column field="incharge" header="In-charge"></Column>
       <Column field="office" header="Office"></Column>
@@ -220,16 +168,16 @@ const addCategory = () => {
   display:flex;
   overflow: auto;
 }
-
 i{
   color: aliceblue;
 }
 
 .sidepanel{
   display:flex;
+  width: 46%; 
 }
 .collapsed {
-    width: 50px;
+   visibility: hidden;
 }
 p{
   color: rgb(255, 255, 255);
@@ -248,7 +196,6 @@ p{
     aside{
 float: left;
 background-color: #F27B8A;
-width: 288.84px;
 height: 100vh;
 overflow-y: auto;
 transition: width 0.3s ease;
@@ -300,7 +247,7 @@ h1{
 }
 
 
-.backgroundpink{
+.frame1{
   position: absolute;
   border: 1px solid;
   bottom: 8%;
@@ -360,5 +307,15 @@ h1{
   border-radius: 10px;
   top: 10px;
   left: 16.5%;
+}
+@media (min-width: 980px){
+.aside{
+  width: 288.84px;
+}
+}
+@media (max-width: 980px){
+.aside{
+  width: 0px;
+}
 }
 </style>

@@ -162,6 +162,7 @@ float: left;
 background-color: #F27B8A;
 width: 100%;
 height: 100vh;
+overflow-y: auto;
 
 }
 #frame1{
