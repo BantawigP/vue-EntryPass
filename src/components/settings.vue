@@ -1,6 +1,5 @@
 <script setup>
 import 'primeicons/primeicons.css'
-import Dropdown from 'primevue/dropdown';
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('collapsed');
