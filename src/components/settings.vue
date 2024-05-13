@@ -40,9 +40,10 @@ function toggleSidebar() {
     <form class="changePass">
 <h3 class="cpass">Change Password</h3>
 <input class="opass" id="opass" v-model="value3" type="text" placeholder="Old Password"/>
-<input class="npass" id="time" v-model="value4" type="text" placeholder="New Password"/>
+<input class="npass" id="npass" v-model="value4" type="text" placeholder="New Password"/>
+<input class="cpass" id="cpass" v-model="value4" type="text" placeholder="Confirm New Password"/>
 
-<Button @click="validate()">Confirm New Password</Button>
+<Button @click="validate()">Confirm</Button>
 
 </form>
 
