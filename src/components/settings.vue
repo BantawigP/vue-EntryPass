@@ -134,7 +134,7 @@ p{
   color: rgb(255, 255, 255);
   text-decoration: none;
   margin-left: 23px;
-  margin-bottom: 319px;
+  margin-bottom: 290px;
 }
 .nav-link-settings{
   color: rgb(255, 255, 255);
@@ -202,6 +202,7 @@ float: left;
 background-color: #F27B8A;
 width: 100%;
 height: 100vh;
+overflow-y: auto;
 
 }
 input[type="text"] {

@@ -24,9 +24,10 @@ function toggleSidebar() {
     </div>
     <nav class="nav flex-column">
       <p class="welcomMess">Hi Visitors!</p>
+      <a class="nav-link-home" href="/booking"><i class="pi pi-home" > Home</i></a>
   <a class="nav-link-book" href="/booking"><i class="pi pi-book" > Book Appointment</i></a>
   <a class="nav-link-view" href="/viewapps"><i class="pi pi-eye" > View Appointment</i></a>
-  <a class="nav-link-settings" href="#"><i class="pi pi-cog" > Settings</i></a>
+  <a class="nav-link-settings" href="settings"><i class="pi pi-cog" > Settings</i></a>
   <a class="nav-link-logout" href="/"><i class="pi pi-sign-out" > Logout</i></a>
 </nav>
   </aside>
@@ -89,18 +90,24 @@ p{
   margin-top: 37px;
   margin-left: 23px;
 }
-.nav-link-book{
+.nav-link-home{
   color: rgb(255, 255, 255);
   text-decoration: none;
   margin-left: 23px;
   margin-bottom:24px;
   margin-top: 70px;
 }
+.nav-link-book{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin-left: 23px;
+  margin-bottom:24px;
+}
 .nav-link-view{
   color: rgb(0, 0, 0);
   text-decoration: none;
   margin-left: 23px;
-  margin-bottom: 319px;
+  margin-bottom: 290px;
 }
 .nav-link-settings{
   color: rgb(255, 255, 255);
@@ -167,6 +174,7 @@ float: left;
 background-color: #F27B8A;
 width: 100%;
 height: 100vh;
+overflow-y: auto;
 
 }
 #toggleIcon{

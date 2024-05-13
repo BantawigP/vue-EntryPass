@@ -129,6 +129,18 @@ p{
     margin-left: 10px;
 }/**para sa sidepanel toggle */
 
+.header_title{
+  flex: 2;
+  text-align: left;
+  margin-top: 55px;
+  padding-right: 45px; 
+}
+.welcomMess{
+      margin-left: 23px;
+      margin-top: 44px;
+    }
+
+
 .logo{
   width: 39.79px;
   height: 35.01px;
@@ -154,7 +166,7 @@ p{
   color: rgb(255, 255, 255);
   text-decoration: none;
   margin-left: 23px;
-  margin-bottom: 319px;
+  margin-bottom: 290px;
 }
 .nav-link-settings{
   color: rgb(255, 255, 255);
@@ -176,6 +188,7 @@ p{
   align-items: center;
   justify-content: center;
 }
+
 
 button{
   display: block;
@@ -208,7 +221,18 @@ float: left;
 background-color: #F27B8A;
 width: 100%;
 height: 100vh;
+overflow-y: auto;
 
+}
+#frame1{
+ 
+ float: center;
+ width: 50%;
+ padding: 20px;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
 }
 .pov{
   height: 30%;
@@ -288,10 +312,9 @@ input[type="text"] {
 aside{
 float: left;
 background-color: #F27B8A;
-width: 46%;
 height: 100vh;
-overflow-y: auto; /**para sa sidepanel toggle */
-transition: width 0.3s ease; /**para sa sidepanel toggle */
+overflow-y: auto;
+transition: width 0.3s ease;
 }
 
 .pov{
