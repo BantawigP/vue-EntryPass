@@ -36,14 +36,7 @@ function toggleSidebar() {
    <div id="frame1">
     <i id="toggleIcon" class="pi pi-bars toggle-icon" @click="toggleSidebar"></i>
 
-    <div class="image-container">
-    <div>
-    <img src="/src/assets/sample.jpg" alt="Image 1">
-    </div>
-    <div>
-    <img src="/src/assets/sample.jpg" alt="Image 2">
-    </div>
-    </div>
+ 
     <table>
                 <thead>
                     <tr>
