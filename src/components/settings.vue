@@ -1,5 +1,7 @@
 <script setup>
 import 'primeicons/primeicons.css'
+import InputText from 'primevue/inputtext';
+import Button from 'primevue/button';
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('collapsed');
@@ -39,9 +41,9 @@ function toggleSidebar() {
 
     <form class="changePass">
 <h3 class="cpass">Change Password</h3>
-<input class="opass" id="opass" v-model="value3" type="text" placeholder="Old Password"/>
-<input class="npass" id="npass" v-model="value4" type="text" placeholder="New Password"/>
-<input class="cpass" id="cpass" v-model="value4" type="text" placeholder="Confirm New Password"/>
+<input class="opass" id="opass" v-model="value3" type="password" placeholder="Old Password"/>
+<input class="npass" id="npass" v-model="value4" type="password" placeholder="New Password"/>
+<input class="cpass" id="cpass" v-model="value5" type="password" placeholder="Confirm New Password"/>
 
 <Button @click="validate()">Confirm</Button>
 
@@ -140,7 +142,7 @@ p{
   align-items: center;
   justify-content: center;
 }
-input[type="text"] {
+input[type="password"] {
     display: block;
     padding: 8px;
     border: 1px solid #ccc;
@@ -156,7 +158,7 @@ margin-top: 36px;
 background-color: #FA7B9F;
 border-radius: 20px;
 border: 1px solid #FA7B9F;
-height:24%;
+height:12%;
 
 color: #fff;
 }
@@ -198,7 +200,7 @@ input[type="text"] {
   margin: auto; 
   padding: 20px; 
   background-color: rgb(217, 217, 217,0.38);
-height:40vh;
+height:50vh;
   border-radius: 10px; /* Add border radius for a rounded look */
 }
 
