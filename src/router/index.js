@@ -8,7 +8,7 @@ import home from "../components/home.vue";
 import viewapps from "../components/viewapps.vue";
 import cashierOffice from "../components/cashierOffice.vue";
 import registration from "../components/registration.vue";
-
+import settings from "../components/settings.vue";
 import adminVinformation from "../components/adminVinformation.vue";
 
 
@@ -48,6 +48,11 @@ const routes = [
         component: home,
       },
       {
+      path: "/settings",
+      name: "Settings",
+      component: settings,
+    },
+      {
         path: "/viewapps",
         name: "View Appointments",
         component: viewapps,
@@ -66,3 +71,4 @@ const routes = [
   });
 
   export default router;
+  

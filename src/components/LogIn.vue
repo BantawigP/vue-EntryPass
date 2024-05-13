@@ -15,17 +15,19 @@ const validate = async () => {
       password: password.value
     });
       alert(response.data.message);
-      window.open('/home','_self');
-
+      localStorage.setItem('savedEmail', email.value);
+      window.open('/home', '_self');
   } catch (error) {
-      if (error.response && error.response.status === 401) {
-        // Unauthorized (invalid email or password)
-        console.error("Invalid email or password");
-      } else {
+    if (error.response && error.response.status === 401) {
+      // Unauthorized (invalid email or password)
+      console.error('Invalid email or password');
+      alert('Invalid email or password. Please try again.');
+    } else {
       // Other errors (e.g., network error)
-        console.error("An error occurred. Please try again later.");
-      }
-      }
+      console.error('An error occurred:', error.message);
+      alert('An error occurred. Please try again later.');
+    }
+  }
 };
 </script>
 
