@@ -7,20 +7,7 @@ function toggleSidebar() {
 
 
 </script>
-<script>
-export default {
-    data() {
-        return {
-            selectedOffice: null,
-            offices: [
-                { name: 'Cashier', code: 'CS' },
-                { name: 'Registrar', code: 'RG' },
-               
-            ]
-        };
-    }
-};
-</script>
+
 <template>
   <body>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
