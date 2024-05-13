@@ -26,7 +26,7 @@ function toggleSidebar() {
   <a class="nav-link-home" href="/home"> <i class="pi pi-home" > Home</i></a>
   <a class="nav-link-book" href="/booking"> <i class="pi pi-book" > Book Appointment</i></a>
   <a class="nav-link-view" href="/viewapps"><i class="pi pi-eye" > View Appointment</i></a>
-  <a class="nav-link-settings" href="#"><i class="pi pi-cog" > Settings</i></a>
+  <a class="nav-link-settings" href="/settings"><i class="pi pi-cog" > Settings</i></a>
   <a class="nav-link-logout" href="/"><i class="pi pi-sign-out" > Logout</i></a>
 </nav>
   </aside>

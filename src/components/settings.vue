@@ -56,7 +56,7 @@ export default {
 <input class="opass" id="opass" v-model="value3" type="text" placeholder="Old Password"/>
 <input class="npass" id="time" v-model="value4" type="text" placeholder="New Password"/>
 
-<Button @click="validate()">Submit</Button>
+<Button @click="validate()">Confirm New Password</Button>
 
 </form>
 
@@ -172,7 +172,7 @@ margin-top: 36px;
 background-color: #FA7B9F;
 border-radius: 20px;
 border: 1px solid #FA7B9F;
-height:12%;
+height:24%;
 
 color: #fff;
 }
