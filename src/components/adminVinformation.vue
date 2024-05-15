@@ -77,7 +77,6 @@ const addCategory = () => {
     <div class="frame">
       <div class="sidepanel">
         <aside id="sidebar">
-      <i class="pi pi-bars toggle-icon" @click="toggleSidebar"></i>
           <div class="wrapper">
             <div class="image_logo">
               <img class="logo" src="/src/assets/logo.enp.png">
@@ -101,6 +100,8 @@ const addCategory = () => {
   <div>
     <div class="VinformationPinkbackground">
       <div class="VinformationWhitebackground">
+        <i class="pi pi-bars toggle-icon" @click="toggleSidebar"></i>
+
         <h1 class="VisitorInformation">Visitor Information</h1>
     <DataTable :value="categories" tableStyle="min-width: 50rem">
       <Column field="id" header="ID"></Column>
