@@ -2,8 +2,8 @@
 import 'primeicons/primeicons.css'
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
-/**import { initializeUserData } from '../getFullname/userFullname';
-*/
+import { initializeUserData } from '../getFullname/userFullname';
+
 const email = ref('');
 const firstName = ref('');
 const lastName = ref('');

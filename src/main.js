@@ -8,10 +8,10 @@ import PrimeVue from "primevue/config";
 import Menubar from "primevue/menubar";
 import router from "./router";
 import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.js";
 
 createApp(App)
 .use(router)
 .use(PrimeVue, { ripple: true })
 .component("Menubar", Menubar)
 .mount('#app')
-import "bootstrap/dist/js/bootstrap.js";

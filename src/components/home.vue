@@ -46,8 +46,6 @@ function toggleSidebar() {
                     
                 </thead>
                 <tbody>
-                   
-                
                 </tbody>
             </table>
            
