@@ -33,10 +33,8 @@ function toggleSidebar() {
   <div id="frame1">
   <i id="toggleIcon" class="pi pi-bars toggle-icon" @click="toggleSidebar"></i>
       <table>
-    <thead>
-        <tr>
-            <th colspan="5" id="title_header">Office Appointments</th>
-        </tr>
+    <thead>    
+        <th colspan="5" id="title_header">Office Appointments</th>
         <tr id="tlabels">
           <th>Firstname</th>
           <th>Lastname</th>
