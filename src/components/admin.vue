@@ -280,6 +280,9 @@ h1{
   transition: margin-left 0.3s ease;
 
 }
+i{
+  visibility: hidden;
+}
 .AccountInformation{
   position: absolute;
   font-family: arial;
