@@ -87,9 +87,9 @@ const addCategory = () => {
           </div>
           <nav class="nav flex-column">
       <p class="welcomMess">Hi Visitors!</p>
-  <a class="nav-link-acc" href="/#"> <i class="pi pi-users" > View Account</i></a>
+  <a class="nav-link-acc" href="/admin"> <i class="pi pi-users" > View Account</i></a>
   <a class="nav-link-view" href="/adminVinformation"><i class="pi pi-eye" > Visitor Accounts</i></a>
-  <a class="nav-link-settings" href="#"><i class="pi pi-cog" > Settings</i></a>
+  <a class="nav-link-settings" href="/settings"><i class="pi pi-cog" > Settings</i></a>
   <a class="nav-link-logout" href="/"><i class="pi pi-sign-out" > Logout</i></a>
 </nav>
         </aside>
