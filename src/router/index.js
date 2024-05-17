@@ -6,7 +6,7 @@ import LogIn from "../components/LogIn.vue";
 import guard from "../components/guard.vue";
 import home from "../components/home.vue";
 import viewapps from "../components/viewapps.vue";
-import cashierOffice from "../components/cashierOffice.vue";
+import office from "../components/office.vue";
 import registration from "../components/registration.vue";
 import settings from "../components/settings.vue";
 import adminVinformation from "../components/adminVinformation.vue";
@@ -58,9 +58,9 @@ const routes = [
         component: viewapps,
       },
       {
-        path: "/cashierOffice",
-        name: "Cashier Office",
-        component: cashierOffice,
+        path: "/office",
+        name: "Office",
+        component: office,
       },
    
   ];

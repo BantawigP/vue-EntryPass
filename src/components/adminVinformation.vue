@@ -170,14 +170,26 @@ const addCategory = () => {
 
 <style scoped>
  .frame{
-  width: 1528px;
-  height: 755px;
+  width: 100%;
+  height: 100vh;
   position:relative;
   background-image: url('/src/assets/bg.png');
   background-size:cover;
   background-repeat: no-repeat;
   display:flex;
   overflow: auto;
+}
+i{
+  color: aliceblue;
+}
+
+.sidepanel{
+  display:flex;
+  max-width: 288.84px;
+  
+}
+.collapsed {
+   visibility: hidden;
 }
 p{
   color: rgb(255, 255, 255);
@@ -188,15 +200,17 @@ p{
   margin-top: 55px;
   padding-right: 45px; 
 }
+
 .welcomMess{
       margin-left: 23px;
       margin-top: 44px;
     }
-aside{
+    aside{
 float: left;
 background-color: #F27B8A;
-width: 288.84px;
-height: 755px;
+height: 100vh;
+overflow-y: auto;
+transition: width 0.3s ease;
 }
 .logo{
   width: 39.79px;
@@ -207,14 +221,14 @@ height: 755px;
   margin-left: 23px;
 }
 .nav-link-acc{
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   text-decoration: none;
   margin-left: 23px;
   margin-bottom:24px;
   margin-top: 70px;
 }
 .nav-link-view{
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   margin-left: 23px;
   margin-bottom: 319px;
@@ -240,6 +254,58 @@ height: 755px;
   justify-content: center;
 }
 
+h1{
+  color: aliceblue;
+}
+
+
+.frame1{
+  position: absolute;
+  border: 1px solid;
+  bottom: 8%;
+  background-color: rgba(238, 139, 204, 0.24); 
+  width: calc(100% - 288.84px); 
+  height: 100vh; 
+  float: right;  
+  top: 0; 
+  right: 0;
+  flex: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  overflow-x: auto;
+
+}
+.AccountInformation{
+  position: absolute;
+  font-family: arial;
+  font-size: 35px;
+  left: 35%;
+  top: -18%;
+  font-family: arial;
+}
+
+.AddAccount{
+  position: relative;
+  left: 15%;
+  top: 0px;
+}
+#newIncharge{
+  position: relative;
+  border-radius: 10px;
+  width: 269px;
+  height: 35px;
+  top: -10px;
+  left: 4.5%;
+}
+#newOffice{
+  position: relative;
+  border-radius: 10px;
+  width: 269px;
+  height: 35px;
+  top: -5px;
+  left: 7%;
+}
+
 
 .p-button-primary{
   position: relative;
@@ -248,21 +314,33 @@ height: 755px;
   left: 19.5%;
 }
 
-h1{
-  color: aliceblue;
-}
 
-.VinformationWhitebackground{
+.p-button-primary1{
+  position: relative;
+  border-radius: 10px;
+  top: 10px;
+  left: 16.5%;
+}
+@media (min-width: 980px){
+.aside{
+  width: 288.84px;
+}
+.frame1{
   position: absolute;
   border: 1px solid;
-  width: 1045px;
-  height: 496px;
-  right: 10%;
   bottom: 8%;
-  background-color: #f27b8bdd;
-}
+  background-color: rgba(238, 139, 204, 0.24); 
+  width: calc(100% - 288.84px); 
+  height: 100vh; 
+  float: right;  
+  top: 0; 
+  right: 0;
+  flex: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
 
-.VisitorInformation{
+}
+.AccountInformation{
   position: absolute;
   font-family: arial;
   font-size: 35px;
@@ -270,12 +348,13 @@ h1{
   top: -18%;
   font-family: arial;
 }
-.AddVisitor{
+
+.AddAccount{
   position: relative;
   left: 15%;
   top: 0px;
 }
-#newName{
+#newIncharge{
   position: relative;
   border-radius: 10px;
   width: 269px;
@@ -283,45 +362,117 @@ h1{
   top: -10px;
   left: 4.5%;
 }
-
-#newDate{
+#newOffice{
   position: relative;
   border-radius: 10px;
   width: 269px;
   height: 35px;
   top: -5px;
-  left: 5.3%;
+  left: 7%;
 }
-#newTime{
+
+
+.p-button-primary{
   position: relative;
   border-radius: 10px;
-  width: 269px;
-  height: 35px;
-  top: 0px;
-  left: 5.2%;
+  top: 10px;
+  left: 19.5%;
 }
 
-.Name{
-  position: relative;
-  top: -10px;
-  left: 3.5%;
-}
-
-.Date{
-  position: relative;
-  top: -5px;
-  left: 4.4%;
-}
-.Time{
-  position: relative;
-  top: -5px;
-  left: 4.4%;
-}
 
 .p-button-primary1{
   position: relative;
   border-radius: 10px;
   top: 10px;
   left: 16.5%;
+}
+}
+@media (max-width: 980px){
+.aside{
+  width: 0px;
+}
+#mainframe{
+  background-color: rgba(238, 139, 204, 0.24); 
+  width: calc(100% - 288.84px); 
+  height: 100%; 
+  float: right;  
+  top: 0; 
+  right: 0;
+  flex: 1;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+.sidepanel{
+  width: 30%; 
+}
+.frame1{
+  position: absolute;
+  border: 1px solid;
+  bottom: 8%;
+  background-color: rgba(238, 139, 204, 0.24); 
+  width: 60%; 
+  height: 100vh; 
+  float: right;  
+  top: 0; 
+  right: 0;
+  flex: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  overflow-x: auto;
+
+}
+.AccountInformation{
+  position: absolute;
+  font-family: arial;
+  font-size: 35px;
+  left: 35%;
+  top: -18%;
+  font-family: arial;
+}
+
+.AddAccount{
+  position: relative;
+  left: 15%;
+  top: 0px;
+}
+#newIncharge{
+  position: relative;
+  border-radius: 10px;
+  width: 60%;
+  height: 8%;
+  top: -7px;
+  left:10%;
+}
+#newOffice{
+  position: relative;
+  border-radius: 10px;
+  width: 60%;
+  height: 8%;
+  top: 7px;
+  left: 15%;
+}
+
+
+.p-button-primary{
+  position: relative;
+  border-radius: 10px;
+  top: 10px;
+  left: 19.5%;
+}
+
+
+.p-button-primary1{
+  position: relative;
+  border-radius: 10px;
+  top: 10px;
+  left: 16.5%;
+}
+.sidepanel {
+  display: flex;
+  max-width: 288.84px;
+}
+
+
+
 }
 </style>

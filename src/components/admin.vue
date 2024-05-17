@@ -86,16 +86,15 @@ function toggleSidebar() {
       <Column field="office_name" header="Office"></Column>
     </DataTable>
 
-    <!-- Add Account Form -->
     <div>
       <h2 class="AddOffice">Add Office</h2>
       <form @submit="addAccount">
         <div>
-          <label class="InCharge" for="newIncharge">In-charge:</label> <!-- to be rmeoved -->
+          <label class="InCharge" for="newIncharge">In-charge:</label> 
           <InputText id="newIncharge" v-model="newIncharge" />
         </div>
         <div>
-          <label class="Office" for="newOffice">Office:</label> <!-- to be rmeoved -->
+          <label class="Office" for="newOffice">Office:</label>
           <InputText id="newOffice" v-model="newOffice" />
         </div>
         <div>
