@@ -3,68 +3,48 @@ import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
 import Button from 'primevue/button';
 import InputText from 'primevue/inputtext';
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
 import 'primeicons/primeicons.css'
+
+const newIncharge = ref('');
+const newOffice = ref('');
+const accounts = ref([]);
+
+
+const fetchAccounts = async () => {
+  try {
+    const response = await axios.get('http://127.0.0.1:8000/api/AllOffice/');
+    accounts.value = response.data;
+  } catch (error) {
+    console.error('An error occurred while fetching the office data:', error.message);
+  }
+};
+
+// Call fetchAccounts when the component is mounted
+onMounted(fetchAccounts);
+
+const addAccount = async () => {
+  try {
+    const response = await axios.post('http://127.0.0.1:8000/api/CreateOffice/', {
+      office_name: newOffice.value,
+      office_in_charge: newIncharge.value
+    });
+
+    alert(response.data.message);
+    // Clear the form inputs after successful creation
+    newIncharge.value = '';
+    newOffice.value = '';
+  } catch (error) {
+    console.error('An error occurred while creating the office:', error.message);
+    alert('Failed to create office. Please try again later.');
+  }
+}
 
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('collapsed');
 }
-const account = ref([
-  {
-    id: 1,
-    incharge: "Alice",
-    office: "Cashier",
-  },
-  
-  {
-    id: 2,
-    incharge: "Paul",
-    office: "Registrar", 
-  }
-]);
-
-const editingAccount = ref(null);
-const newAccount = ref({ incharge: '', office: '' }); // New category object for incharge and offfice
-
-const editAccount = (accounts) => {
-  editingAccount.value = { ...accounts.data }; // Set editingAccounts to the selected account's data
-};
-
-const saveEditedAccount = () => {
-  if (editingAccount.value) {
-    // Update the account data with the edited values
-    const index = account.value.findIndex((c) => c.id === editingAccount.value.id);
-    account.value[index].incharge = editingAccount.value.incharge;
-    account.value[index].office = editingAccount.value.office;
-    editingAccount.value = null;
-  }
-};
-
-const cancelEdit = () => {
-  editingAccount.value = null;
-  editingCategory.value = null;
-};
-
-const deleteAccount = (accounts) => {
-  // Find the index of the category
-  const index = account.value.findIndex((c) => c.id === accounts.id);
-  // Remove the category from the categories array
-  account.value.splice(index, 1);
-};
-
-const addAccount = () => {
-  if (newAccount.value.incharge && newAccount.value.office) {
-    // Generate a new unique ID (replace with your actual ID generation logic)
-    const newId = Math.max(...account.value.map((c) => c.id)) + 1;
-    newAccount.value.id = newId;
-    account.value.push({ ...newAccount.value });
-    // Clear the form for the next addition
-    newAccount.value.incharge = '';
-    newAccount.value.office = '';
-  }
-};
-
 
 </script>
 
@@ -101,50 +81,22 @@ const addAccount = () => {
     <i class="pi pi-bars toggle-icon" @click="toggleSidebar"></i>
 
    
-    <DataTable :value="account" resizableColumns columnResizeMode="fit" showGridlines tableStyle="max-width: 45rem;  ">
-      <Column field="id" header="ID"></Column>
-      <Column field="incharge" header="In-charge"></Column>
-      <Column field="office" header="Office"></Column>
-      
-      <Column header="Actions">
-        <template #body="rowData">
-          <Button label="Edit" icon="pi pi-pencil" class="p-button-info" @click="editAccount(rowData)" />
-          <Button label="Delete" icon="pi pi-trash" class="p-button-danger" @click="deleteAccount(rowData)" />
-         
-        </template>
-      </Column>
+    <DataTable :value="accounts" tableStyle="min-width: 50rem; margin: 0 auto;">
+      <Column field="office_in_charge" header="In-charge"></Column>
+      <Column field="office_name" header="Office"></Column>
     </DataTable>
-
-    <!-- Editing Account -->
-    <div id="mainframe" v-if="editingAccount">
-      <h3>Edit Account</h3>
-      <form @submit="saveEditedAccount">
-        <div>
-          <label for="editedIncharge">In-charge:</label>
-          <InputText id="editedIncharge" v-model="editingAccount.incharge" />
-        </div>
-        <div>
-          <label for="editedOffice">Office:</label>
-          <InputText id="editedOffice" v-model="editingAccount.office" />
-        </div>
-        <div>
-          <Button label="Save" icon="pi pi-check" class="p-button-success" type="submit" />
-          <Button label="Cancel" icon="pi pi-times" class="p-button-secondary" @click="cancelEdit" />
-        </div>
-      </form>
-    </div>
 
     <!-- Add Account Form -->
     <div>
-      <h3 class="AddAccount">Add Account</h3>
-      <form @submit.prevent="addAccount">
+      <h2 class="AddOffice">Add Office</h2>
+      <form @submit="addAccount">
         <div>
-          <label class="InCharge" for="newIncharge">In-charge:</label>
-          <InputText id="newIncharge" v-model="newAccount.incharge" />
+          <label class="InCharge" for="newIncharge">In-charge:</label> <!-- to be rmeoved -->
+          <InputText id="newIncharge" v-model="newIncharge" />
         </div>
         <div>
-          <label class="Office" for="newOffice">Office:</label>
-          <InputText id="newOffice" v-model="newAccount.office" />
+          <label class="Office" for="newOffice">Office:</label> <!-- to be rmeoved -->
+          <InputText id="newOffice" v-model="newOffice" />
         </div>
         <div>
           <Button label="Add" icon="pi pi-plus" class="p-button-primary" type="submit" />

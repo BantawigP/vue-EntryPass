@@ -1,17 +1,22 @@
 <script setup>
 import 'primeicons/primeicons.css'
-import { ref } from 'vue';
-
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
+/**import { initializeUserData } from '../getFullname/userFullname';
+*/
 const email = ref('');
+const firstName = ref('');
+const lastName = ref('');
 const date_of_visit = ref('');
 const time_of_visit = ref('');
 const office_name = ref('');
 const purpose = ref('');
 const maxCharacters = 200;
+const selectedOffice = ref('Default');
+const offices = ref([]);
 
 if (localStorage.getItem('savedEmail')) {
   email.value = localStorage.getItem('savedEmail');
-  console.log(email.value)
 }
 
 const validate = async () => {
@@ -49,6 +54,32 @@ const handlePurposeInput = () => {
     purpose.value = purpose.value.slice(0, maxCharacters);
   }
 };
+
+const fetchData = async () => {
+  try {
+    const userData = await initializeUserData(email.value);
+    firstName.value = userData.firstname;
+    lastName.value = userData.lastname;
+  } catch (error) {
+    console.error('Error initializing user data:', error);
+    // Handle error appropriately
+  }
+};
+
+// Fetch user data when the component is mounted
+fetchData();
+
+const fetchOffices = async () => {
+  try {
+    const response = await axios.get('http://127.0.0.1:8000/api/AllOfficeOnly/');
+    offices.value = response.data;
+  } catch (error) {
+    console.error('An error occurred while fetching the office data:', error.message);
+  }
+};
+
+onMounted(fetchOffices);
+
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('collapsed');
@@ -85,15 +116,14 @@ function toggleSidebar() {
    <div id="frame1">
     <i id="toggleIcon" class="pi pi-bars toggle-icon" @click="toggleSidebar"></i>
 
-<form class="bookingform">
+    <form class="bookingform">
   <input class="date" id="form" v-model="date_of_visit" type="date"/>
   <input class="time" id="form" v-model="time_of_visit" type="time"/>
-  <select name="office" id="form" v-model = "office_name">
+  <select name="office" id="form" v-model="selectedOffice">
       <option value="Default">Select an office</option>
-      <option value="Cashier">Cashier</option>
-      <option value="Registrar">Registrar</option>
-      <option value="OSAD">OSAD</option>
-      <option value="Bookstore">Bookstore</option>
+      <option v-for="office in offices" :key="office.office_name" :value="office.office_name">
+        {{ office.office_name }}
+      </option>
     </select>
     <textarea class="pov" id="pov" v-model="purpose" placeholder="Purpose of Visit" @input="handlePurposeInput"></textarea>
   <Button @click="validate()">Submit</Button>
